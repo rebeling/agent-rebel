@@ -6,4 +6,6 @@ Based on Martin Fowlers Any fool can...
 
 mkdocs serve
 
+mkdocs gh-deploy
+
 -->
