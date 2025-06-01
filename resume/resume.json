@@ -119,41 +119,56 @@
   "skills": [
     {
       "name": "Programming Languages",
-      "level": "Expert",
+      "level": "Senior",
       "keywords": ["Python", "PHP", "JavaScript"]
     },
     {
-      "name": "Backend Technologies",
+      "name": "Backend Development",
       "level": "Senior",
-      "keywords": ["Node.js", "PostgreSQL", "Redis", "Elasticsearch"]
+      "keywords": ["Node.js", "FastAPI", "PostgreSQL", "Redis", "Elasticsearch"]
     },
     {
       "name": "DevOps & Infrastructure",
       "level": "Senior",
-      "keywords": ["Docker", "AWS", "GitLab", "Jenkins", "Ansible", "Traefik"]
+      "keywords": ["Docker", "AWS", "Traefik", "GitLab", "Jenkins", "Ansible", "Vercel"]
     },
     {
-      "name": "Frameworks & Tools",
-      "keywords": ["FastAPI", "Drupal", "Make", "GitLab CI"]
+      "name": "Tools & CI/CD",
+      "level": "Advanced",
+      "keywords": ["GitLab CI", "Make", "OpenAPI Specification", "CI/CD Pipelines"]
     },
     {
-      "name": "Concepts & Architectures",
-      "keywords": [
-        "Serverless Architecture",
-        "Microservices Architecture",
-        "CI/CD Pipelines",
-        "Containerization",
-        "OpenAPI Specification"
-      ]
+      "name": "Software Architecture",
+      "level": "Advanced",
+      "keywords": ["Serverless Architecture", "Microservices Architecture", "Containerization"]
     },
     {
       "name": "AI & Data Technologies",
+      "level": "Advanced",
       "keywords": [
         "Natural Language Processing",
         "Machine Learning",
-        "MCP",
-        "A2A"
+        "Embeddings",
+        "Named Entity Recognition",
+        "Spatial Search",
+        "Apache Parquet",
+        "Spacy",
+        "Elasticsearch",
+        "OpenAI",
+        "Claude",
+        "Ollama",
+        "LLM.txt"
       ]
+    },
+    {
+      "name": "LLM Development & Prompt Engineering",
+      "level": "Advanced",
+      "keywords": ["LLM.txt", "OpenAI", "Claude", "Ollama", "Embeddings", "Vibe Coding"]
+    },
+    {
+      "name": "Content Management",
+      "level": "Advanced",
+      "keywords": ["Drupal"]
     }
   ],
   "publications": [
@@ -171,7 +186,7 @@
   "certificates": [
     {
       "name": "Ultimate AWS Certified Developer Associate 2025 DVA-C02",
-      "issuer": "Udemy - Stephane Maarek - in progress 65%",
+      "issuer": "Udemy - Stephane Maarek - in progress 67%",
       "date": "2025-01"
     },
     {
