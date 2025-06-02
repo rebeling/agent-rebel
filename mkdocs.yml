@@ -2,6 +2,8 @@ site_name: Agent Rebel
 site_description: Agent Rebel / shim to use agent rebel with LLMs
 site_url: https://github.com/rebeling/rebeling
 
+copyright: Copyright &copy; 2025 Matthias Rebel
+
 strict: true
 docs_dir: docs
 
@@ -59,6 +61,7 @@ theme:
     - navigation.sections
     - navigation.tracking
     - toc.follow
+    - navigation.footer
   # logo: "img/logo-white.svg"
   favicon: "favicon.ico"
   #custom_dir: overrides
@@ -79,12 +82,21 @@ markdown_extensions:
   - attr_list
   - md_in_html
 plugins:
-  # - blog:
-  #     blog_toc: true
-  #     post_url_format: "{categories}/{slug}"
-  #     post_excerpt_separator: <!-- more -->
   - search
+  # - llmstxt:
+  #   markdown_description: Long description of my project.
+  #   sections:
+  #     Usage documentation:
+  #       - file1.md
+  #       - file2.md
 
 extra:
   # hide the "Made with Material for MkDocs" message
   generator: false
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/rebeling
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/matthias-rebel-525b3333
+    - icon: fontawesome/solid/envelope
+      link: mailto:matthias.rebel@gmail.com
