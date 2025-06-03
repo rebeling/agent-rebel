@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "json2md": "^2.0.3",
+    "jsonresume-theme-elegant": "^1.16.1",
+    "jsonresume-theme-even": "^0.23.0",
+    "jsonresume-theme-modern": "^0.0.18",
+    "jsonresume-theme-straightforward": "^0.2.0",
+    "resumed": "^3.0.1",
+    "wkhtmltopdf": "^0.4.0"
+  },
+  "devDependencies": {
+    "@jsonresume/cli": "^1.2.8",
+    "jsonresume-theme-flat": "^0.3.7"
+  },
+  "name": "rebeling",
+  "version": "1.0.0",
+  "description": "Based on Martin Fowlers Any fool can...",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
