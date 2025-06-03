@@ -58,15 +58,22 @@ Supported outputs include:
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
 />
 
-https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css
-<div style="display:flex; gap:1.25rem; align-items:center; font-size:1.15rem;">
-
-<i class="fa-solid fa-file-pdf" style="color: #74C0FC;"></i>
-<i class="fa-solid fa-file-word" style="color: #74C0FC;"></i>
-<i class="fa-brands fa-html5" style="color: #74C0FC;"></i>
-<i class="fa-brands fa-markdown" style="color: #74C0FC;"></i>
-<i class="fa-solid fa-code" style="color: #74C0FC;"></i>
-
+<div style="display:flex; gap:2.25rem; justify-content: center; font-size:1.42rem;">
+    <a href="/rebeling/rebeling/resume/out/positive/resume.pdf">
+        <i class="fa-solid fa-file-pdf" style="color: #74C0FC;"></i>
+    </a>
+    <a href="/rebeling/rebeling/resume/out/positive/resume.doc">
+        <i class="fa-solid fa-file-word" style="color: #74C0FC;"></i>
+    </a>
+    <a href="/rebeling/rebeling/resume/cv.html">
+        <i class="fa-brands fa-html5" style="color: #74C0FC;"></i>
+    </a>
+    <a href="/rebeling/rebeling/resume/out/positive/resume.md" download>
+        <i class="fa-brands fa-markdown" style="color: #74C0FC;"></i>
+    </a>
+    <a href="/rebeling/rebeling/resume/out/positive/resume.yml">
+        <i class="fa-brands" style="font-size:1.1rem; color: #74C0FC;">yml</i>
+    </a>
 </div>
 
 

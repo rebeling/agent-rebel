@@ -17,7 +17,7 @@
       {
         "network": "GitHub",
         "username": "rebeling",
-        "url": "https://github.com/rebeling"
+        "url": "/rebeling/rebeling/"
       },
       {
         "network": "LinkedIn",
@@ -65,11 +65,13 @@
       "position": "Student Researcher",
       "startDate": "2009-05",
       "endDate": "2011-04",
-      "summary": "As a Student Researcher at DFKI GmbH in Berlin (2009–2011), contributed to the development of a multilingual mobile dialogue assistant. Designed a classification algorithm to detect question–answer pairs and improved dialogue structures for a diploma thesis project. Positive feedback in [performance review](/data/dfki.pdf).",
+      "summary": "At DFKI GmbH (German Research Center for Artificial Intelligence) in Berlin, worked as a Student Researcher on an innovative multilingual mobile dialogue assistant. Contributed to natural language understanding and dialogue design by applying core concepts from computational linguistics, such as syntax, semantics, and speech technologies. Developed an SVM-based algorithm for question–answer pair detection and improved dialogue coherence for a diploma thesis project. Received positive feedback in [performance review](/data/dfki.pdf).",
       "highlights": [
-        "Developed multilingual mobile dialogue assistant (PHP, Objective‑C).",
-        "Designed classification algorithm for question‑answer pair detection.",
-        "Enhanced user interaction and dialogue structures for diploma thesis project."
+        "Developed a multilingual mobile dialogue assistant (PHP, Objective‑C).",
+        "Designed and trained an SVM-based classification algorithm for automatic detection of question–answer pairs.",
+        "Improved dialogue structure and naturalness based on semantic parsing and user behavior.",
+        "Integrated text-to-speech (TTS) and speech-to-text (STT) components into mobile dialogue interactions.",
+        "Focused on agent-based dialogue modeling and interaction flows for natural user experiences."
       ]
     },
     {
@@ -78,10 +80,13 @@
       "position": "Student Researcher",
       "startDate": "2006-03",
       "endDate": "2009-02",
+      "summary": "Studied Computational Linguistics at Universität Potsdam with a focus on syntax, semantics, parsing, speech technologies (TTS/STT), and dialogue systems. As a Student Researcher, contributed to academic and infrastructure projects involving semantic document transformation, retrieval systems, and content management. Also explored VoiceXML and agent-based interaction concepts during coursework and lab work.",
       "highlights": [
-        "Converted Word documents to XML for eXist‑db (Python, Tomcat).",
-        "Developed data retrieval interface for project website (Python).",
-        "Built CMS for personal staff websites (Python)."
+        "Converted linguistics research documents into XML and integrated them with eXist-db (Python, Tomcat).",
+        "Developed a data retrieval interface for a digital linguistics project website (Python).",
+        "Built a lightweight CMS for managing personal staff pages (Python).",
+        "Academic focus areas: syntax and semantic parsing, machine learning (SVMs), dialogue systems, TTS/STT.",
+        "Explored VoiceXML and agent-based interfaces for spoken dialogue system design."
       ]
     },
     {
@@ -130,40 +135,59 @@
     {
       "name": "DevOps & Infrastructure",
       "level": "Senior",
-      "keywords": ["Docker", "AWS", "Traefik", "GitLab", "Jenkins", "Ansible", "Vercel"]
+      "keywords": [
+        "Docker",
+        "AWS",
+        "Traefik",
+        "GitLab",
+        "Jenkins",
+        "Ansible",
+        "Vercel"
+      ]
     },
     {
       "name": "Tools & CI/CD",
       "level": "Advanced",
-      "keywords": ["GitLab CI", "Make", "OpenAPI Specification", "CI/CD Pipelines"]
+      "keywords": [
+        "GitLab CI",
+        "Make",
+        "OpenAPI Specification",
+        "CI/CD Pipelines"
+      ]
     },
     {
       "name": "Software Architecture",
       "level": "Advanced",
-      "keywords": ["Serverless Architecture", "Microservices Architecture", "Containerization"]
-    },
-    {
-      "name": "AI & Data Technologies",
-      "level": "Advanced",
       "keywords": [
-        "Natural Language Processing",
-        "Machine Learning",
-        "Embeddings",
-        "Named Entity Recognition",
-        "Spatial Search",
-        "Apache Parquet",
-        "Spacy",
-        "Elasticsearch",
-        "OpenAI",
-        "Claude",
-        "Ollama",
-        "LLM.txt"
+        "Serverless Architecture",
+        "Microservices Architecture",
+        "Containerization"
       ]
     },
     {
-      "name": "LLM Development & Prompt Engineering",
+      "name": "LLM Systems & AI Infrastructure",
       "level": "Advanced",
-      "keywords": ["LLM.txt", "OpenAI", "Claude", "Ollama", "Embeddings", "Vibe Coding"]
+      "keywords": [
+        "Prompt Engineering",
+        "LLM.txt",
+        "OpenAI",
+        "Ollama",
+        "OpenRouter",
+        "Vibe Coding",
+        "Embeddings",
+        "Spatial Search",
+        "Elasticsearch",
+        "RAG (Retrieval-Augmented Generation)",
+        "Natural Language Processing",
+        "Named Entity Recognition",
+        "Parsing",
+        "Spacy",
+        "Apache Parquet",
+        "Vector Databases",
+        "Semantic Search",
+        "A2A (Agent-to-Agent)",
+        "MCP (Model Context Protocol)"
+      ]
     },
     {
       "name": "Content Management",

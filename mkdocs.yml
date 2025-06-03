@@ -18,13 +18,11 @@ nav:
   - changelog.md
   - Documentation:
       - posts/resume-as-code.md
-      - posts/ai-coding-assistents.md
-      - Dialogues:
-          - dialogues/dialogue1-2025-05-22.md
-          - dialogues/dialogue2-2025-05-23.md
-      - projects/fastfourier.md
-  - contributing.md
-  - license.md
+      # - posts/ai-coding-assistents.md
+      # - Dialogues:
+      #     - dialogues/dialogue1-2025-05-22.md
+      #     - dialogues/dialogue2-2025-05-23.md
+      # - projects/fastfourier.md
 
 theme:
   name: material
@@ -89,6 +87,14 @@ plugins:
   #     Usage documentation:
   #       - file1.md
   #       - file2.md
+  # - exclude:
+  #   glob:
+  #     - "docs/resume/node_modules**"
+  #     - "docs/resume/.env"
+
+exclude_docs: |
+  resume/node_modules/
+  .env
 
 extra:
   # hide the "Made with Material for MkDocs" message
