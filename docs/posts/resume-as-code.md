@@ -9,6 +9,7 @@ links:
   - JSON Resume registry: https://registry.jsonresume.org
   - JSON Resume Gist: https://gist.github.com/rebeling
   - HackMyResume: https://github.com/hacksalot/HackMyResume
+  - RenderCV: https://rendercv.com
 ---
 
 # Resume as Code
@@ -44,10 +45,15 @@ https://registry.jsonresume.org/rebeling?theme={theme}
 **[paper-plus-plus](https://registry.jsonresume.org/rebeling?theme=paper-plus-plus)**,
 **[elegant](https://registry.jsonresume.org/rebeling?theme=elegant)**, ...
 
+And also output in different formats, like
+- https://registry.jsonresume.org/rebeling.txt
+- https://registry.jsonresume.org/rebeling.md
+- https://registry.jsonresume.org/rebeling.rendercv
+
 But the command-line tools were less reliable. Rendering didn’t always match what I saw online. And for a CV—where layout, clarity, and precision matter—that’s a problem.
 
 ## HackMyResume: CLI That Works
-While the JSON Resume ecosystem showed a lot of promise, the command-line tooling didn’t quite hold up in day-to-day use. That’s where [HackMyResume](https://github.com/hackmyresume/hackmyresume) came in—it picked up where the official CLI fell short and delivered exactly what I needed: reliable, multi-format exports from a single JSON source.
+While the JSON Resume ecosystem showed a lot of promise, the command-line tooling didn’t quite hold up in day-to-day use. That’s where [HackMyResume](https://github.com/hacksalot/HackMyResume) came in—it picked up where the official CLI fell short and delivered exactly what I needed: reliable, multi-format exports from a single JSON source.
 
 Setup was straightforward. Installation took just a few seconds, and I was able to generate all major formats with a single command. No tweaking, no layout surprises—just consistent results.
 
@@ -79,7 +85,22 @@ Supported outputs include:
 
 HackMyResume also supports custom themes, allowing you to control layout and styling across formats without duplicating effort. Once configured, it provided a reproducible, flexible resume pipeline that fits naturally into a developer workflow.
 
-It’s a simple tool—but it solved the problem completely.
+It’s a simple tool—but it solved the problem completely. For example, with a single command, you can instantly analyze the coverage of key skills:
+
+```
+    hackmyresume analyze resume.json
+```
+
+## Update: RenderCV – Clean Structure and Academic Focus
+
+A relatively new and well-maintained addition to the résumé-as-code ecosystem is [RenderCV](https://rendercv.com), an open-source tool designed with a focus on academics and engineers. It uses a Typst-based rendering engine to turn structured YAML input into clean, professional documents in PDF, HTML, or Markdown formats—perfect for anyone who values clarity and control.
+
+Interestingly, the JSON Resume registry also supports automatic conversion to RenderCV’s YAML format via Gists. For example, this URL:
+
+[https://registry.jsonresume.org/rebeling.rendercv](https://registry.jsonresume.org/rebeling.rendercv)
+
+…automatically transforms your resume into a RenderCV-compatible layout. The results look promising—definitely worth exploring further.
+
 
 ## Conclusion
 

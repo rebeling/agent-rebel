@@ -22,3 +22,6 @@ node js/encrypt.js encrypt "$(cat <<'HTML'
 </div>
 HTML
 )" "Vm7o4DzxzuIwsKNk6"
+
+
+3. hackmyresume build resume.json TO out/resume.all -t node_modules/jsonresume-theme-classy
