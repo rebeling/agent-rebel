@@ -1,9 +1,11 @@
 {
   "dependencies": {
     "json2md": "^2.0.3",
+    "jsonresume-theme-classy": "^1.0.9",
     "jsonresume-theme-elegant": "^1.16.1",
     "jsonresume-theme-even": "^0.23.0",
     "jsonresume-theme-modern": "^0.0.18",
+    "jsonresume-theme-slick": "^0.1.16",
     "jsonresume-theme-straightforward": "^0.2.0",
     "resumed": "^3.0.1",
     "wkhtmltopdf": "^0.4.0"
