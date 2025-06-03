@@ -18,7 +18,7 @@ hide:
 <p class="text-center">
 
 
-<a href="/rebeling/rebeling/resume/cv.html">
+<a href="/agent-rebel/resume/cv.html">
   <img src="https://img.shields.io/badge/HTML-CV-blue--orange?logo=html5" alt="HTML" style="margin-right: 10px;" />
 </a>
 

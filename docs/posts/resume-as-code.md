@@ -59,19 +59,19 @@ Supported outputs include:
 />
 
 <div style="display:flex; gap:2.25rem; justify-content: center; font-size:1.42rem;">
-    <a href="/rebeling/rebeling/resume/out/positive/resume.pdf">
+    <a href="/agent-rebel/resume/out/positive/resume.pdf">
         <i class="fa-solid fa-file-pdf" style="color: #74C0FC;"></i>
     </a>
-    <a href="/rebeling/rebeling/resume/out/positive/resume.doc">
+    <a href="/agent-rebel/resume/out/positive/resume.doc">
         <i class="fa-solid fa-file-word" style="color: #74C0FC;"></i>
     </a>
-    <a href="/rebeling/rebeling/resume/cv.html">
+    <a href="/agent-rebel/resume/cv.html">
         <i class="fa-brands fa-html5" style="color: #74C0FC;"></i>
     </a>
-    <a href="/rebeling/rebeling/resume/out/positive/resume.md" download>
+    <a href="/agent-rebel/resume/out/positive/resume.md" download>
         <i class="fa-brands fa-markdown" style="color: #74C0FC;"></i>
     </a>
-    <a href="/rebeling/rebeling/resume/out/positive/resume.yml">
+    <a href="/agent-rebel/resume/out/positive/resume.yml">
         <i class="fa-brands" style="font-size:1.1rem; color: #74C0FC;">yml</i>
     </a>
 </div>

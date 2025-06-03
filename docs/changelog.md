@@ -26,4 +26,4 @@
   - feat: Enhanced user interaction and dialogue structures.
 
 
-You can view an interactive resume cover [here](/rebeling/rebeling/resume/cover.html).
+You can view an interactive resume cover [here](/agent-rebel/resume/cover.html).
