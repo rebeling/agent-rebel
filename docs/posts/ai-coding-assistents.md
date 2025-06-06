@@ -14,6 +14,9 @@ links:
 
 <!-- more -->
 
+<!-- jules dominique -->
+<!-- v0 quizzer -->
+
 
   <div class="ai-grid" id="card-container"></div>
   <script>

@@ -23,6 +23,7 @@ nav:
       #     - dialogues/dialogue1-2025-05-22.md
       #     - dialogues/dialogue2-2025-05-23.md
       # - projects/fastfourier.md
+      - Dominique: projects/dominique.md
 
 theme:
   name: material
@@ -79,6 +80,12 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
   - md_in_html
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
 plugins:
   - search
   # - llmstxt:
@@ -93,6 +100,7 @@ plugins:
   #     - "docs/resume/.env"
 
 exclude_docs: |
+  resume2
   resume/node_modules/
   .env
 
