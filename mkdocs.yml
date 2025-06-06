@@ -16,9 +16,9 @@ nav:
   # - help.md
   #  - troubleshooting.md
   - changelog.md
-  - Documentation:
-      - posts/resume-as-code.md
-      # - posts/ai-coding-assistents.md
+  - Projects:
+      - projects/resume-as-code.md
+      - Vibe Coding Journey: projects/ai-coding-assistents.md
       # - Dialogues:
       #     - dialogues/dialogue1-2025-05-22.md
       #     - dialogues/dialogue2-2025-05-23.md
@@ -100,6 +100,7 @@ plugins:
   #     - "docs/resume/.env"
 
 exclude_docs: |
+  resume
   resume2
   resume/node_modules/
   .env
