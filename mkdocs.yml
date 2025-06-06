@@ -1,14 +1,14 @@
 site_name: Agent Rebel
 site_description: Agent Rebel / shim to use agent rebel with LLMs
-site_url: https://github.com/rebeling/rebeling
+site_url: https://github.com/agent-rebel
 
 copyright: Copyright &copy; 2025 Matthias Rebel
 
 strict: true
 docs_dir: docs
 
-repo_name: rebeling/rebeling
-repo_url: https://github.com/rebeling/rebeling
+repo_name: agent-rebel
+repo_url: https://github.com/agent-rebel
 
 nav:
   - Introduction: index.md
