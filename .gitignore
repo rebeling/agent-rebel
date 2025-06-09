@@ -4,6 +4,8 @@ node_modules
 package.json
 package-lock.json
 
+__trash
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

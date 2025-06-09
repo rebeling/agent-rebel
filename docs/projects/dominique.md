@@ -1,15 +1,16 @@
 ---
 date: 2025-06-06
-title: Edit Your Website with Dominique
+title: Dominique - the oneend editing assistant
 categories:
   - Dev Life
-
+  - Oneend
+  - Anyend
+  - AI
 links:
-  - Nested section:
-    - GitHub: https://github.com/rebeling/dominique
+  - GitHub: https://github.com/rebeling/dominique
 ---
 
-# Edit Your Website with Dominique
+# Dominique - the oneend agent
 
 You know those website builders made for small business owners?
 Pick a theme. Drop in blocks. Accordion. Image next to text. Call to action. Maybe a testimonial slider. Everything configurable without touching code. Sounds good in theory.
@@ -31,7 +32,7 @@ Dominique aims to simplify the process of editing and updating websites by provi
 
 Also AI is already used in every editor for lingustic task, rewrite in simple language, find synonyms, and replace them with more direct ones. Check sentiment of the paragraph and so on.
 
-## The 0neend
+## Oneend
 
 I wanted something simpler. So I built **Oneend**.
 
@@ -49,9 +50,9 @@ She updates the DOM immediately. No preview. No detour. No backend. You’re edi
 stateDiagram-v2
     [*] --> Edit_Mode
     Edit_Mode --> Click_Element
-    Click_Element --> Dominique_dialog
-    Edit_Mode --> Dominique_dialog
-    Dominique_dialog --> Apply
+    Click_Element --> Dominique_Dialog
+    Edit_Mode --> Dominique_Dialog
+    Dominique_Dialog --> Apply
     Apply --> Click_Element
     Apply --> Save
     Save --> [*]
@@ -63,12 +64,6 @@ stateDiagram-v2
 
 ## Conclusion
 
-Because I am tired of systems that turn content editing into a process.
-
-No backend. No API. No damn preview mode. No accordion block configuration panel with five tabs. Just your site, live, in the browser. Editable.
-
-Dominique is a oneend prototype. It is for single sites that need to change fast, without going through huge devops process. No dashboards. No content types. Just text, markup, and an AI editor support you.
-
-If you want to ship content without infrastructure, this is may a way to do it. Get in touch with me to discuss further.
+Because I am tired of systems that turn content editing into a process for the user. No backend, no preview mode, no accordion block configuration panel with five tabs. Dominique is a oneend prototype. It is for single sites that need to change fast, without going through huge devops process. Just your site, you and Dominique, in the browser. An editable romance.
 
 [Dominique code on GitHub](https://github.com/rebeling/dominique) and the repo as [Github page demo](https://rebeling.github.io/dominique/)
