@@ -58,7 +58,10 @@ stateDiagram-v2
     Save --> [*]
 ```
 
-
+<figure markdown="span">
+  ![Dominique](../img/dominique-action.png){ loading=lazy }
+  <figcaption>Dominique in action</figcaption>
+</figure>
 
 ---
 

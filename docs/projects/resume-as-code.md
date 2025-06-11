@@ -10,6 +10,7 @@ links:
   - JSON Resume Gist: https://gist.github.com/rebeling
   - HackMyResume: https://github.com/hacksalot/HackMyResume
   - RenderCV: https://rendercv.com
+  - Typst: https://typst.app
 ---
 
 # Resume as Code
@@ -93,17 +94,24 @@ It’s a simple tool—but it solved the problem completely. For example, with a
 
 ## Update: RenderCV – Clean Structure and Academic Focus
 
-A relatively new and well-maintained addition to the résumé-as-code ecosystem is [RenderCV](https://rendercv.com), an open-source tool designed with a focus on academics and engineers. It uses a Typst-based rendering engine to turn structured YAML input into clean, professional documents in PDF, HTML, or Markdown formats—perfect for anyone who values clarity and control.
+A relatively new and well-maintained addition to the resume-as-code ecosystem is [RenderCV](https://rendercv.com), an open-source tool designed with a focus on academics and engineers. It uses a Typst-based rendering engine to turn structured YAML input into clean, professional documents in PDF, HTML, or Markdown formats—perfect for anyone who values clarity and control.
 
 Interestingly, the JSON Resume registry also supports automatic conversion to RenderCV’s YAML format via Gists. For example, this URL:
 
 [https://registry.jsonresume.org/rebeling.rendercv](https://registry.jsonresume.org/rebeling.rendercv)
 
-…automatically transforms your resume into a RenderCV-compatible layout. The results look promising—definitely worth exploring further.
+…automatically transforms your resume into a RenderCV-compatible layout. The results look promising,  definitely worth exploring further. But at the end the next schema specific to the system used. You name it and suddenly sticked to the system. And its nice to have a website, a pdf, docx, ...from the same data. But its not specific to one task, it solve every task quite not as great as it could be.
 
+## Stumbled upon Typst
+
+Typst is a modern, open-source typesetting system that allows you to create beautiful documents with ease. It's designed to be easy to learn and use, and it offers a powerful set of features for creating professional-looking documents. Made in Berlin and a bit complicated at first, it is widly accepted by community creating templates for everything + a lot of stars on github.
+
+At the end it creates just a PDF, but it looks really good. So I am redefining my idea to serve them all, with lets create m incredible pdf. The point where we started - the circle of enlightning.
 
 ## Conclusion
 
-I now maintain one resume file in JSON, versioned in Git, with scripted outputs for any channel. If you're a developer, this approach gives you automation, repeatability, and full control over presentation.
+Checked out some cv rendering strategies and endup with Typst. The templates I find need some work to apply my data. But I put it into a structured yaml file finally. And then I need to update the code or some people use toml file as data base. But the result is worth the transformation for now. May the community will develop their own structure for coverletter and resume. We will see.
 
-**Treat your resume like code—it scales better.**
+Typst is pretty nice, remember the hassle with latex, but the advantage over docs for writings at university.
+
+**Treat your resume like any other project and discover new things.**
