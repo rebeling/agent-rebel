@@ -13,8 +13,10 @@
         <link rel="canonical" href="https://github.com/agent-rebel/projects/dominique/">
       
       
-        <link rel="prev" href="../ai-coding-assistents/">
+        <link rel="prev" href="../resume-as-code/">
       
+      
+        <link rel="next" href="../ai-coding-assistents/">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -22,7 +24,7 @@
     
     
       
-        <title>Edit Your Website with Dominique - Agent Rebel</title>
+        <title>Dominique - the oneend editing assistant - Agent Rebel</title>
       
     
     
@@ -82,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#edit-your-website-with-dominique" class="md-skip">
+        <a href="#dominique-the-oneend-agent" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Edit Your Website with Dominique
+              Dominique - the oneend editing assistant
             
           </span>
         </div>
@@ -330,6 +332,8 @@
       
         
       
+        
+      
     
     
     
@@ -373,12 +377,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../resume-as-code/" class="md-nav__link">
+      <a href="../rust-everywhere/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Resume as Code
+    Rust Everywhere
     
   </span>
   
@@ -396,12 +400,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai-coding-assistents/" class="md-nav__link">
+      <a href="../resume-as-code/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Vibe Coding Journey
+    Resume as Code
     
   </span>
   
@@ -478,9 +482,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-0neend" class="md-nav__link">
+  <a href="#oneend" class="md-nav__link">
     <span class="md-ellipsis">
-      The 0neend
+      Oneend
     </span>
   </a>
   
@@ -499,6 +503,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-coding-assistents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vibe Coding
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -547,9 +574,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-0neend" class="md-nav__link">
+  <a href="#oneend" class="md-nav__link">
     <span class="md-ellipsis">
-      The 0neend
+      Oneend
     </span>
   </a>
   
@@ -583,7 +610,7 @@
   
 
 
-<h1 id="edit-your-website-with-dominique">Edit Your Website with Dominique</h1>
+<h1 id="dominique-the-oneend-agent">Dominique - the oneend agent</h1>
 <p>You know those website builders made for small business owners?
 Pick a theme. Drop in blocks. Accordion. Image next to text. Call to action. Maybe a testimonial slider. Everything configurable without touching code. Sounds good in theory.</p>
 <figure>
@@ -596,7 +623,7 @@ Pick a theme. Drop in blocks. Accordion. Image next to text. Call to action. May
 <p>The idea comes from the experience of building websites with traditional CMS systems. These systems often require a complex setup, including a backend, API, and preview mode. This can be time-consuming and frustrating for developers and content creators alike.</p>
 <p>Dominique aims to simplify the process of editing and updating websites by providing a live-editable interface directly in the browser. This eliminates the need for a backend GUI, making it easier to make changes without going through a complex process.</p>
 <p>Also AI is already used in every editor for lingustic task, rewrite in simple language, find synonyms, and replace them with more direct ones. Check sentiment of the paragraph and so on.</p>
-<h2 id="the-0neend">The 0neend</h2>
+<h2 id="oneend">Oneend</h2>
 <p>I wanted something simpler. So I built <strong>Oneend</strong>.</p>
 <p>It’s still just a static site. Plain HTML. But when you flip it into edit mode, the entire page becomes live-editable. Click any element, and Dominique shows up. She’s an AI agent trained to work directly on the DOM. You tell her what you want:</p>
 <div class="language-text highlight"><pre><span></span><code>&gt; Make this text more direct
@@ -608,18 +635,19 @@ Pick a theme. Drop in blocks. Accordion. Image next to text. Call to action. May
 <pre class="mermaid"><code>stateDiagram-v2
     [*] --&gt; Edit_Mode
     Edit_Mode --&gt; Click_Element
-    Click_Element --&gt; Dominique_dialog
-    Edit_Mode --&gt; Dominique_dialog
-    Dominique_dialog --&gt; Apply
+    Click_Element --&gt; Dominique_Dialog
+    Edit_Mode --&gt; Dominique_Dialog
+    Dominique_Dialog --&gt; Apply
     Apply --&gt; Click_Element
     Apply --&gt; Save
     Save --&gt; [*]</code></pre>
+<figure>
+  <img alt="Dominique" loading="lazy" src="../../img/dominique-action.png" />
+  <figcaption>Dominique in action</figcaption>
+</figure>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<p>Because I am tired of systems that turn content editing into a process.</p>
-<p>No backend. No API. No damn preview mode. No accordion block configuration panel with five tabs. Just your site, live, in the browser. Editable.</p>
-<p>Dominique is a oneend prototype. It is for single sites that need to change fast, without going through huge devops process. No dashboards. No content types. Just text, markup, and an AI editor support you.</p>
-<p>If you want to ship content without infrastructure, this is may a way to do it. Get in touch with me to discuss further.</p>
+<p>Because I am tired of systems that turn content editing into a process for the user. No backend, no preview mode, no accordion block configuration panel with five tabs. Dominique is a oneend prototype. It is for single sites that need to change fast, without going through huge devops process. Just your site, you and Dominique, in the browser. An editable romance.</p>
 <p><a href="https://github.com/rebeling/dominique">Dominique code on GitHub</a> and the repo as <a href="https://rebeling.github.io/dominique/">Github page demo</a></p>
 
 
@@ -655,7 +683,7 @@ Pick a theme. Drop in blocks. Accordion. Image next to text. Call to action. May
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../ai-coding-assistents/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Vibe Coding Journey">
+          <a href="../resume-as-code/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Resume as Code">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -665,11 +693,27 @@ Pick a theme. Drop in blocks. Accordion. Image next to text. Call to action. May
                 Previous
               </span>
               <div class="md-ellipsis">
-                Vibe Coding Journey
+                Resume as Code
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../ai-coding-assistents/" class="md-footer__link md-footer__link--next" aria-label="Next: Vibe Coding">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Vibe Coding
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
