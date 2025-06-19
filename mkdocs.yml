@@ -17,7 +17,7 @@ nav:
   #  - troubleshooting.md
   - changelog.md
   - Projects:
-      - LLM as judge: projects/llm-as-judge.md
+      - LLM-as-a-judge: projects/llm-as-a-judge.md
       - Rust Everywhere: projects/rust-everywhere.md
       - Vibe Coding: projects/ai-coding-assistents.md
       # - Agents: projects/agents.md
