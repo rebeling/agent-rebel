@@ -57,3 +57,46 @@ def process_chat_message(message: str) -> str:
     response = agent.run(message)
     return response
 ```
+
+<div id="status-badge-container"></div>
+
+<script>
+function getCurrentTheme() {
+  return document.body.dataset.mdColorScheme;
+}
+
+function updateStatusBadge() {
+  const isDark = getCurrentTheme() === 'slate';
+  const badgeUrl = `https://status.betterstack.com/badge?theme=${isDark ? 'dark' : 'light'}`;
+
+  const container = document.getElementById('status-badge-container');
+  if (container) {
+    container.innerHTML = `
+      <iframe
+        src="${badgeUrl}"
+        width="250"
+        height="30"
+        frameborder="0"
+        scrolling="no"
+        style="border:0;">
+      </iframe>
+    `;
+  }
+}
+
+function observeThemeChanges() {
+  const observer = new MutationObserver(() => {
+    updateStatusBadge();
+  });
+
+  observer.observe(document.body, {
+    attributes: true,
+    attributeFilter: ['data-md-color-scheme'],
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  updateStatusBadge();
+  observeThemeChanges();
+});
+</script>

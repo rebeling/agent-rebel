@@ -17,14 +17,15 @@ nav:
   #  - troubleshooting.md
   - changelog.md
   - Projects:
+      - LLM as judge: projects/llm-as-judge.md
       - Rust Everywhere: projects/rust-everywhere.md
-      - Resume as Code: projects/resume-as-code.md
+      - Vibe Coding: projects/ai-coding-assistents.md
       # - Agents: projects/agents.md
       #     - dialogues/dialogue1-2025-05-22.md
       #     - dialogues/dialogue2-2025-05-23.md
       # - projects/fastfourier.md
       - Dominique: projects/dominique.md
-      - Vibe Coding: projects/ai-coding-assistents.md
+      - Resume as Code: projects/resume-as-code.md
 
 theme:
   name: material

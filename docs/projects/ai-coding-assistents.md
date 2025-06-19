@@ -5,19 +5,31 @@ categories:
   - Dev Life
 
 links:
+  - Claude Code: https://www.anthropic.com/claude-code
+  - v0: https://v0.dev
   - Nested section:
-    - External link: https://example.com
+    - https://v0-quizgen.vercel.app
+  - Copilot: https://github.com/features/copilot
+  - Codex: https://openai.com/codex/
+  - AWS Q: https://aws.amazon.com/de/q/developer
+  - Cody: https://sourcegraph.com/cody
+  - Cursor: https://www.cursor.com/
+  - Qodo: https://www.qodo.ai/
+  - JetBrains Ai: https://www.jetbrains.com/ai/
+  - Codium: https://codeium.com/
+  - Jules: https://jules.google/
+
 ---
 
 # My Vibe Coding Journey
 
 I've been deep in the world of AI coding assistants lately, exploring what it means to vibe code that is, coding with flow, creativity, and an AI pair at your side. What started out as curiosity became a full-blown journey across tools, editors, and mindsets.
 
-My first real taste of vibe coding was with Windsurf (Codeium) fast but kind of nerdy. So I quickly shifted to Cursor, that felt like it knew what I was building. I did a full React project in Cursor, and it was a bit mind-blowing—instant feedback, full context-aware suggestions, and even design help. My daily workflow kind of moved into a switching between Cursor, Sublime, and ChatGPT got tiring. I needed a unified daily setup.
+My first real taste of vibe coding was with Windsurf (Codeium) fast but kind of nerdy. So I quickly shifted to Cursor, that felt like it knew what I was building. I did a full React project in Cursor, and it was a bit mind-blowing—instant feedback, full context-aware suggestions, and even design help. My daily workflow started shifting between Cursor, Sublime, and ChatGPT, but constantly switching tools became tiring. I needed a unified daily setup.
 
 Enter Zed.
 
-Zed blends the speed and minimalism with built-in AI assistance and deep Git integration. It’s now my daily driver low latency, high focus, and that same "flow state" feeling Cursor gave me. The assistant is subtly present but powerful when needed. Zed just clicks with my workflow.
+Zed blends the speed and minimalism with built-in AI assistance and deep Git integration. It’s now my daily driver, offering low latency, high focus, and that same "flow state" feeling Cursor gave me. The assistant is subtly present but powerful when needed. Zed just clicks with my workflow.
 
 ---
 
@@ -25,7 +37,7 @@ Zed blends the speed and minimalism with built-in AI assistance and deep Git int
 
 ### Quiz Runner built with v0
 
-[Quiz Runner](https://v0-quizgen.vercel.app): Built with [Vercel v0](https://v0.dev), this project started as an experiment from plain English description to a usable frontend? It helps to create quizzes with AI assistance and then load it into the app. Little quizzes to every topic you need little knowledge check and update. V0 helped scaffold the UI instantly. It's now hosted on Vercel and growing into a lightweight app for running quizzes dynamically. It works like this:
+[Quiz Runner](https://v0-quizgen.vercel.app): Built with [Vercel v0](https://v0.dev), this project started as an experiment from plain English description to a usable frontend. It helps to create quizzes with AI assistance and then load it into the app. Little quizzes to every topic you need little knowledge check and update. V0 helped scaffold the UI instantly. It's now hosted on Vercel and growing into a lightweight app for running quizzes dynamically. It works like this:
 
 1. Create a prompt describing your quiz topic.
 2. Paste it into your AI tool to generate a YAML file.
@@ -41,7 +53,7 @@ At the beginning it honestly felt like coding on steroids. I asked for something
 
 ---
 
-## List of Ai Assistants I found
+## Incomplete list of Ai Coding Assistants
 
   <div class="ai-grid" id="card-container"></div>
   <script>
@@ -88,6 +100,14 @@ At the beginning it honestly felt like coding on steroids. I asked for something
   </script>
 
 ---
+
+
+## Anthropic Claude Code
+
+Check this talk [Claude Code: How Two Engineers Ship Like a Team of 15](https://www.youtube.com/watch?v=Lh_X32t9_po) by Every at YouTube. The landscape of ai coding editors and assistents changes so fast and what they discusssed and also showed what they are doing with claude code command line tool ...crazy. Its like google jules, takes order and take some time, but the results are pretty awesome, it just delivers.
+
+Open with your project /init analyze project and lets get ready to rumble. Now worries, there will be a warning when your session is at 5$. See [Claude Code - Your code’s new collaborator](https://www.anthropic.com/claude-code)
+
 
 ## Conclusion
 
