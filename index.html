@@ -335,6 +335,8 @@
       
         
       
+        
+      
     
     
     
@@ -378,6 +380,29 @@
   
   
     <li class="md-nav__item">
+      <a href="projects/llm-as-a-judge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LLM-as-a-judge
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="projects/rust-everywhere/" class="md-nav__link">
         
   
@@ -401,12 +426,12 @@
   
   
     <li class="md-nav__item">
-      <a href="projects/resume-as-code/" class="md-nav__link">
+      <a href="projects/ai-coding-assistents/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Resume as Code
+    Vibe Coding
     
   </span>
   
@@ -447,12 +472,12 @@
   
   
     <li class="md-nav__item">
-      <a href="projects/ai-coding-assistents/" class="md-nav__link">
+      <a href="projects/resume-as-code/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Vibe Coding
+    Resume as Code
     
   </span>
   
@@ -559,6 +584,48 @@
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="k">return</span> <span class="n">response</span>
 </span></code></pre></div>
+<div id="status-badge-container"></div>
+
+<script>
+function getCurrentTheme() {
+  return document.body.dataset.mdColorScheme;
+}
+
+function updateStatusBadge() {
+  const isDark = getCurrentTheme() === 'slate';
+  const badgeUrl = `https://status.betterstack.com/badge?theme=${isDark ? 'dark' : 'light'}`;
+
+  const container = document.getElementById('status-badge-container');
+  if (container) {
+    container.innerHTML = `
+      <iframe
+        src="${badgeUrl}"
+        width="250"
+        height="30"
+        frameborder="0"
+        scrolling="no"
+        style="border:0;">
+      </iframe>
+    `;
+  }
+}
+
+function observeThemeChanges() {
+  const observer = new MutationObserver(() => {
+    updateStatusBadge();
+  });
+
+  observer.observe(document.body, {
+    attributes: true,
+    attributeFilter: ['data-md-color-scheme'],
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  updateStatusBadge();
+  observeThemeChanges();
+});
+</script>
 
 
 
