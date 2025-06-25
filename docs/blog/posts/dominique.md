@@ -1,8 +1,7 @@
 ---
-date: 2025-06-06
+date: 2025-05-27
 title: Dominique - the oneend editing assistant
 categories:
-  - Dev Life
   - Oneend
   - Anyend
   - AI
@@ -14,6 +13,8 @@ links:
 
 You know those website builders made for small business owners?
 Pick a theme. Drop in blocks. Accordion. Image next to text. Call to action. Maybe a testimonial slider. Everything configurable without touching code. Sounds good in theory.
+
+<!-- more -->
 
 <figure markdown="span">
   ![Dominique](../img/dominique.png){ loading=lazy }

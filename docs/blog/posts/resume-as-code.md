@@ -1,5 +1,6 @@
 ---
-date: 2025-05-27
+draft: true
+date: 2025-05-14
 title: Resume as Code
 categories:
   - Dev Life

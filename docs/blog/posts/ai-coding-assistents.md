@@ -7,8 +7,6 @@ categories:
 links:
   - Claude Code: https://www.anthropic.com/claude-code
   - v0: https://v0.dev
-  - Nested section:
-    - https://v0-quizgen.vercel.app
   - Copilot: https://github.com/features/copilot
   - Codex: https://openai.com/codex/
   - AWS Q: https://aws.amazon.com/de/q/developer
@@ -24,6 +22,8 @@ links:
 # My Vibe Coding Journey
 
 I've been deep in the world of AI coding assistants lately, exploring what it means to vibe code that is, coding with flow, creativity, and an AI pair at your side. What started out as curiosity became a full-blown journey across tools, editors, and mindsets.
+
+<!-- more -->
 
 My first real taste of vibe coding was with Windsurf (Codeium) fast but kind of nerdy. So I quickly shifted to Cursor, that felt like it knew what I was building. I did a full React project in Cursor, and it was a bit mind-blowing—instant feedback, full context-aware suggestions, and even design help. My daily workflow started shifting between Cursor, Sublime, and ChatGPT, but constantly switching tools became tiring. I needed a unified daily setup.
 
@@ -102,7 +102,7 @@ At the beginning it honestly felt like coding on steroids. I asked for something
 ---
 
 
-## Anthropic Claude Code
+## Anthropic Claude Code (Update June 15)
 
 Check this talk [Claude Code: How Two Engineers Ship Like a Team of 15](https://www.youtube.com/watch?v=Lh_X32t9_po) by Every at YouTube. The landscape of ai coding editors and assistents changes so fast and what they discusssed and also showed what they are doing with claude code command line tool ...crazy. Its like google jules, takes order and take some time, but the results are pretty awesome, it just delivers.
 

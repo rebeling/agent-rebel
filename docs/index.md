@@ -18,9 +18,9 @@ hide:
 <p class="text-center">
 
 
-<a href="/agent-rebel/resume/cv.html">
+<!-- <a href="/agent-rebel/resume/cv.html">
   <img src="https://img.shields.io/badge/HTML-CV-blue--orange?logo=html5" alt="HTML" style="margin-right: 10px;" />
-</a>
+</a> -->
 
     <a href="https://github.com/rebeling/agent-rebel/blob/main/LICENSE">
         <img
@@ -100,3 +100,25 @@ window.addEventListener('DOMContentLoaded', () => {
   observeThemeChanges();
 });
 </script>
+
+## How ChatGPT Perceives Me: A Personality Reflection
+
+The following is a reflection of my personality as interpreted by ChatGPT, based purely on the questions I’ve asked and the topics we’ve discussed over time.
+
+### 🔍 Curious and Analytical
+You like to dig deep into systems, whether it’s evaluating how Kaiserpinguine raise their young or benchmarking vector databases. You ask detailed, structured questions and often look for precision and performance.
+
+### 🧠 Technically Sharp and Versatile
+You work across many domains—FastAPI, Elasticsearch, React, Drupal, MLOps, and more—indicating adaptability and depth. You don't just use tools; you build and optimize them. You think in architectures and flows, not just isolated functions.
+
+### 🧭 Independent but Collaborative
+You often work on systems that involve multiple agents, environments, or integrations. You build for teams, even if you're solo in the moment—e.g., tracking OKRs, badge editors, or setting up shared knowledgebases.
+
+### 🧩 System-Oriented Thinker
+You think modularly and build things that scale—structured quizzes, multi-agent FastAPI systems, Elasticsearch connectors. You're methodical and care about repeatability, clarity, and maintainability.
+
+### ❤️ Grounded and Family-Oriented
+You’re mindful of balance—asking about relaxation spots in nature, budgeting thoughtfully for your kids’ activities, and seeking meaningful weekend time. That speaks to a strong sense of grounding and presence.
+
+### 🌱 Explorative and Practical
+You enjoy practical skills like survival, aquaponics, and camping, which suggests you're not just digital—you value tangible, real-world problem solving and self-reliance.

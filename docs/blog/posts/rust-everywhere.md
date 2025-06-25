@@ -2,22 +2,24 @@
 date: 2025-06-08
 title: Rust everywhere
 categories:
-  - Dev Life
   - Rust
   - Python
 links:
   - Just: https://github.com/casey/just
-  - uv: https://github.com/astral-sh/uv
-  - Pydantic v2: https://docs.pydantic.dev/latest/
-  - Zed: https://zed.dev
-  - Rust: https://www.rust-lang.org
-  - PyO3: https://pyo3.rs
   - maturin: https://github.com/PyO3/maturin
+  - Pydantic v2: https://docs.pydantic.dev/latest/
+  - PyO3: https://pyo3.rs
+  - Rust: https://www.rust-lang.org
+  - uv: https://github.com/astral-sh/uv
+  - Zed: https://zed.dev
 ---
 
 # Rust appears everywhere
 
-Yesterday I came along Just in a project and figured out a nice task runner like Makefile. Reading the README I noticed it is written in Rust. That happens all the time for a few months: Rust appears everywhere in my developer eco system. Project manager uv is ultra fast, pydantic v2 core rewritten in rust for performance, my new editor Zed super sleek and fast, and that is just what I am directly aware of, what is it about Rust. I need to hello world into it.
+Yesterday I came along Just in a project and figured out a nice task runner like Makefile. Reading the README I noticed it is written in Rust. That happens all the time for a few months: Rust appears everywhere in my developer eco system. Project manager uv is ultra fast, pydantic v2 core rewritten in rust for performance, my new editor Zed is super sleek and fast, and that is just what I am directly aware of, what about Rust? I need to hello world into it.
+
+<!-- more -->
+
 
 ```zsh
 ➜  rust0 git:(master) ✗ cargo run

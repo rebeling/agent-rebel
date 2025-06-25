@@ -1,6 +1,6 @@
 site_name: Agent Rebel
 site_description: Agent Rebel / shim to use agent rebel with LLMs
-site_url: https://github.com/agent-rebel
+site_url: https://rebeling.github.io/agent-rebel/
 
 copyright: Copyright &copy; 2025 Matthias Rebel
 
@@ -8,7 +8,7 @@ strict: true
 docs_dir: docs
 
 repo_name: agent-rebel
-repo_url: https://github.com/agent-rebel
+repo_url: https://github.com/rebeling/agent-rebel
 
 nav:
   - Introduction: index.md
@@ -17,15 +17,16 @@ nav:
   #  - troubleshooting.md
   - changelog.md
   - Projects:
-      - LLM-as-a-judge: projects/llm-as-a-judge.md
-      - Rust Everywhere: projects/rust-everywhere.md
-      - Vibe Coding: projects/ai-coding-assistents.md
-      # - Agents: projects/agents.md
-      #     - dialogues/dialogue1-2025-05-22.md
-      #     - dialogues/dialogue2-2025-05-23.md
-      # - projects/fastfourier.md
-      - Dominique: projects/dominique.md
-      - Resume as Code: projects/resume-as-code.md
+      - Agents: /agent-rebel/blog/2025/06/23/agents---from-helpful-assistants-to-lovebirds/
+      - LLM-as-a-judge: /agent-rebel/blog/2025/06/19/llm-as-a-judge/
+      - Rust Everywhere: /agent-rebel/blog/2025/06/08/rust-everywhere/
+      - Dominique: /agent-rebel/blog/2025/05/27/dominique---the-oneend-editing-assistant/
+      - Vibe Coding: /agent-rebel/blog/2025/05/05/my-vibe-coding-journey/
+      # # - Agents: projects/agents.md
+      # # - projects/fastfourier.md
+      # - Resume as Code: projects/resume-as-code.md
+  - Podcast:
+      - AI Revolution: https://open.spotify.com/show/4I43MkHUM1IU4mlZXUzB9i
 
 theme:
   name: material
@@ -63,14 +64,22 @@ theme:
     - navigation.tracking
     - toc.follow
     - navigation.footer
+    - navigation.expand
+    #- navigation.tabs
+    - navigation.sections
+    - navigation.external_links
+
   # logo: "img/logo-white.svg"
   favicon: "favicon.ico"
-  #custom_dir: overrides
+  # custom_dir: overrides
 extra_css:
   - styles/main-bg.css
   - styles/extra.css
   - styles/portfolio.css
   - styles/agents.css
+
+extra_javascript:
+  - js/nav-target-blank.js
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -90,6 +99,7 @@ markdown_extensions:
 
 plugins:
   - search
+  - blog
   # - llmstxt:
   #   markdown_description: Long description of my project.
   #   sections:

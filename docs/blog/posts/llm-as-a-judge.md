@@ -2,14 +2,18 @@
 date: 2025-06-19
 title: LLM-as-a-judge
 categories:
-  - Dev Life
   - AI
+  - LLM
+  - Evaluation
+  - RAG
 ---
 
 
 # LLM-as-a-judge: smart eval for RAG systems
 
 Retrieval-Augmented Generation (RAG) is quickly becoming the go-to technique for making Large Language Models (LLMs) more reliable and less prone to "hallucinations". By integrating a retrieval component that pulls in specific, trusted data, RAG systems can deliver accurate, source-backed answers for everything from customer support to fraud detection.
+
+<!-- more -->
 
 However, the real challenge isn't just building a RAG system; it's evaluating and continuously improving its performance. Unlike traditional models with clear metrics like accuracy, RAG outputs are unstructured text, making evaluation complex. Traditional methods often fall short, struggling to capture the nuanced quality of generated text and the interplay between a RAG system's various components, such as the retriever and generator. This is where the LLM-as-a-judge approach shines, offering a practical and scalable solution for teams with limited time and resources.
 
