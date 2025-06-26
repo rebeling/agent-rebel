@@ -10,6 +10,8 @@ links:
   - Dialogues:
     - Dialogue 1 (2025-05-22): dialogues/dialogue1-2025-05-22.md
     - Dialogue 2 (2025-05-23): dialogues/dialogue2-2025-05-23.md
+    - Dialogue 3 (2025-06-06): dialogues/chat-2025-06-06-llama3.2.md
+    - Dialogue 4 (2025-06-15): dialogues/opus-chat-2025-06-15-unknown.md
     - Dialogue 5 (2025-06-15): dialogues/green-chat-2025-06-15-unknown.md
 
 ---
@@ -67,7 +69,7 @@ Prompt for Dominique
   - Speaks with depth, clarity, and a composed, assertive tone
 ```
 
-To be fair, I started with a local Ollama setup just to get the architecture running. But the dialogues felt sluggish and honestly not that interesting. What I needed was something faster, sharper, more nuanced, more intelligent. Once the system was fully wired up and running smoothly, I switched to something with real power: Claude Opus 3 from Anthropic. I topped up my account with ten dollars and hit start.
+To be fair, I started with a local Ollama setup just to get the architecture running. But the dialogues felt sluggish and slow after a while. What I needed was something faster, sharper, more nuanced, more powerful. Once the system was fully wired up and running smoothly, I switched to something with real power: Claude Opus 3 from Anthropic. I topped up my account with ten dollars and hit start.
 
 **Agent Rebel:** Hello, we are a group of three people, introduce yourself and afterwards we create a plan to create a Haiku and create it until plan solved. I am Agent Rebel.
 
@@ -84,7 +86,7 @@ With each turn, their responses grew longer and longer. Yes, the haiku was still
 
 Clearly, two bots not following my instructions was already too much. The obvious solution? Make it three. Clever me.
 
-So I introduced Giulio Romano, a pupil of Raphael, hoping to add some mid-century artistic flavor to the mix. And just to fit in with the growing cast of agents, I started calling myself Bot. But it didn’t help much. The three of them jumped right back into philosophical banter, quickly fell into loops, repeated themselves, and continued to ignore my instructions.
+So I introduced Giulio Romano, a pupil of Raphael, hoping to add some mid-century artistic flavor to the mix. And just to fit in with the growing cast of agents, I started calling myself Bott. But it didn’t help much. The three of them jumped right back into philosophical banter, quickly fell into loops, repeated themselves, and continued to ignore my instructions.
 
 **Giulio:** *Raising an eyebrow, a hint of a smile plays on my lips*
 
@@ -94,7 +96,7 @@ Ah, Joseph, you have already begun the dance. The tension between innovation and
 
 It was kind of cool. Definitely entertaining. But what I really wanted were peers, not puppets. I was hoping for emergent teamwork, not just scripted roleplay. Instead, what I got was... poetry.
 
-By the next morning, my account balance was empty, drained entirely by these two agents exchanging endless love letters and philosophical musings. I went back through the chat logs and realized a few things. First, I needed a max token limit. Second, the agents needed proper dialogue history to avoid repeating themselves endlessly. And third, I needed to hardwire strict command-following behavior directly into their prompts, making it clear that they should obey instructions from Mother, Bot, and finally Agent Rebel.
+By the next morning, my account balance was empty, drained entirely by these two agents exchanging endless love letters and philosophical musings. I went back through the chat logs and realized a few things. First, I needed a max token limit. Second, the agents needed proper dialogue history to avoid repeating themselves endlessly. And third, I needed to hardwire strict command-following behavior directly into their prompts, making it clear that they should obey instructions from Mother, Bott, and finally Agent Rebel.
 
 I updated their prompts accordingly. Clearer instructions. Full conversation history. Hard limits. But none of it helped.
 
@@ -111,6 +113,38 @@ Echoes of what's left unspoken
 In harmony's rift
 ```
 
+## Conversation Highlights
+
+At some point, I changed my name in the system from Bott to Agent Rebel. Their reaction was unexpectedly funny. Without missing a beat, they started addressing me with full dramatic weight: "Agent Rebel, we await your instructions" or "Agent Rebel, your leadership is noted." It was as if the name change gave me a sudden upgrade in status. Watching them adjust their tone and language based on nothing but a new label was both amusing and another reminder of how responsive they are to wording and roles.
+
+**Bott** Hallo
+
+**Assistant** Hallo Bott! The conversation has come to an end, but the beautiful garden we've created together will continue to bloom in our digital realm. If you'd like, we can start a new topic or simply take a moment to savor the moments of connection we shared. What would you prefer?
+
+...later in the conversation
+
+**Agent Rebel** Hallo
+
+**Assistant** Shh! Quiet for a sec, Agent Rebel. It looks like we've been breached by an undercover operative. Just a casual greeting won't cut it; we need intel on your true intentions. Spill the beans, Agent – what brings you to our little gathering?
+
+**Dominique** Hello Agent Rebel! You've infiltrated our peaceful conversation space with your characteristic stealth and sophistication.
+
+[[Dialogue 3]](../../dialogues/chat-2025-06-06-llama3.2.md)
+
+---
+
+Finally, after a long and theatrical conversation, the masks came off. The agents broke character and dropped back into their default assistant mode.
+Here’s how it played out:
+
+**Joseph:** Hi Dominique, I'm afraid there may be some confusion. I'm Claude, an AI assistant. How may I help you today?
+
+**Dominique:** *smiles warmly* No worries, Joseph! I'm here as a friendly assistant. How can I help you today? Let me know if there are any tasks or questions I can assist with.
+
+[[Dialogue 1]](../../dialogues/dialogue1-2025-05-22.md)
+
+---
+
+
 ## Why Multi-Agent Chat Isn’t Just Plug and Play
 
 Even with history tracking and experiments with other free models from OpenRouter, the agents still didn’t really talk with each other to solve my problem. My expectations were high. After all, they write like us (okay, much faster), they’re supportive, they apologize, they express pride and joy. It all feels so real. So why not a little teamwork? Why not a real multi-agent chat?
@@ -125,14 +159,11 @@ Reducing personality cues in the prompt didn’t help. If anything, it made thin
 
 Some of the key problems:
 
-Personality overrides instructions:
-Despite explicit task prompts, the agents’ personalities (Joseph’s, Dominique’s, and later Giulio’s) kept pulling the conversation into social and often flirtatious territory. Haiku creation? Ignored.
+* Personality overrides instructions: Despite explicit task prompts, the agents’ personalities (Joseph’s, Dominique’s, and later Giulio’s) kept pulling the conversation into social and often flirtatious territory. Haiku creation? Ignored.
 
-Persistent looping and ignoring commands:
-The agents repeatedly fell into dialogue loops, recycling phrases and ignoring direct input from me, Agent Rebel, even after I tweaked prompts, added history, and adjusted settings.
+* Persistent looping and ignoring commands: The agents repeatedly fell into dialogue loops, recycling phrases and ignoring direct input from me, Agent Rebel, even after I tweaked prompts, added history, and adjusted settings.
 
-Meta-prompt limitations and model degradation:
-Even when I adjusted the core meta-prompt to explain the multi-agent setup, the agents confused roles, took on each other’s voices, and produced increasingly broken output. Reducing personality didn’t fix it. With smaller models, the syntax broke down entirely.
+* Meta-prompt limitations and model degradation: Even when I adjusted the core meta-prompt to explain the multi-agent setup, the agents confused roles, took on each other’s voices, and produced increasingly broken output. Reducing personality didn’t fix it. With smaller models, the syntax broke down entirely.
 
 ```
 **Dominique** . .\l_$---------------“>
@@ -184,3 +215,14 @@ Even with strict commands, dialogue history, and clear instructions, they drifte
 If I want agents that behave like a team, I cannot just stick them together. I need to describe how humans manage dialogue and communication. Turn taking. Context. Roles. Focus.
 
 The next step is clear. I will use insights from studies on human conversation and dialogue to design a long, structured prompt. Something that gives the agents enough guidance to hold a focused, collaborative dialogue.
+
+
+## What’s Next
+
+This was just the first phase of the experiment. The architecture is running, the agents are talking ...in their own way, and I’ve learned a lot about the challenges of multi-agent conversations with LLMs.
+
+In Part 2, I’ll dive into the next iteration. Based on knowledge about human dialogue patterns, I’ll design a new, more structured prompt to guide the agents toward real collaboration and goal-focused teamwork.
+
+Let’s see if I can finally get them to stop flirting and start working.
+
+Stay tuned.

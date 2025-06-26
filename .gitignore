@@ -4,6 +4,8 @@ node_modules
 package.json
 package-lock.json
 
+docs/dialogues/ignore
+
 __trash
 
 # Byte-compiled / optimized / DLL files
