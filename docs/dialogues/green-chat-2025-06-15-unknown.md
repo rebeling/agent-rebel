@@ -13,10 +13,10 @@ tags:
 
 [← Return to main post](../blog/posts/agents1.md)
 
-
-# Chat: green-chat-2025-06-15-unknown
+# Dialogue: green-chat-2025-06-15-unknown
 
 **Exported:** 2025-06-15 21:28:00
+
 **Messages:** 24
 
 ---
