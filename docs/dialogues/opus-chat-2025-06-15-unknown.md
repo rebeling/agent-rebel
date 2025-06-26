@@ -11,9 +11,9 @@ tags:
   - agents
 ---
 
-[← Return to main post](../blog/posts/agents1.md)
-
 # Dialogue: opus-chat-2025-06-15-unknown
+
+[← Return to main post](../blog/posts/agents1.md)
 
 **Exported:** 2025-06-15 21:28:00
 
