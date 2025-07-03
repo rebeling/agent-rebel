@@ -5,17 +5,18 @@ categories:
   - Dev Life
 
 links:
-  - Claude Code: https://www.anthropic.com/claude-code
-  - v0: https://v0.dev
-  - Copilot: https://github.com/features/copilot
-  - Codex: https://openai.com/codex/
   - AWS Q: https://aws.amazon.com/de/q/developer
-  - Cody: https://sourcegraph.com/cody
-  - Cursor: https://www.cursor.com/
-  - Qodo: https://www.qodo.ai/
-  - JetBrains Ai: https://www.jetbrains.com/ai/
+  - Claude Code: https://www.anthropic.com/claude-code
+  - Claudia: https://claudia.asterisk.so
+  - Codex: https://openai.com/codex/
   - Codium: https://codeium.com/
+  - Cody: https://sourcegraph.com/cody
+  - Copilot: https://github.com/features/copilot
+  - Cursor: https://www.cursor.com/
+  - JetBrains Ai: https://www.jetbrains.com/ai/
   - Jules: https://jules.google/
+  - Qodo: https://www.qodo.ai/
+  - v0: https://v0.dev
 
 ---
 
@@ -107,6 +108,10 @@ At the beginning it honestly felt like coding on steroids. I asked for something
 Check this talk [Claude Code: How Two Engineers Ship Like a Team of 15](https://www.youtube.com/watch?v=Lh_X32t9_po) by Every at YouTube. The landscape of ai coding editors and assistents changes so fast and what they discusssed and also showed what they are doing with claude code command line tool ...crazy. Its like google jules, takes order and take some time, but the results are pretty awesome, it just delivers.
 
 Open with your project /init analyze project and lets get ready to rumble. Now worries, there will be a warning when your session is at 5$. See [Claude Code - Your code’s new collaborator](https://www.anthropic.com/claude-code)
+
+## Claudia (Update July 3)
+
+Just installed [Claudia](https://claudia.asterisk.so) from Asterisk and I’m in love again—this goes way beyond simply running Claude Code from the command line. While Claude already works great in the terminal, Claudia adds an entire new layer with its sleek, intuitive interface that makes managing sessions, projects, and agents look almost effortless. It’s a full-featured command center for Claude Code, complete with project history, token and cost tracking, versioning, and even custom agent management. I’m definitely curious to dig deeper into the analytics, timeline features, and agent tools. For now, it feels like a passion project with serious potential. Full hands-on test to follow!
 
 
 ## Conclusion
