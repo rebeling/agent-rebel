@@ -620,6 +620,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-masquerade-of-multi-agent-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Masquerade of Multi-Agent Systems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#back-to-programming-and-a-deeper-understanding-of-language" class="md-nav__link">
     <span class="md-ellipsis">
       Back to programming (and a deeper understanding of language)
@@ -706,7 +715,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              10 min read
+                              12 min read
                             
                           </span>
                         </div>
@@ -863,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../dialogues/opus-chat-2025-06-15-unknown/" class="md-nav__link">
+      <a href="../../../../../dialogues/chat-2025-06-15-gemma-3-1b-it/" class="md-nav__link">
         
   
   
@@ -886,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../dialogues/green-chat-2025-06-15-unknown/" class="md-nav__link">
+      <a href="../../../../../dialogues/chat-2025-06-15-deepseek-r1-0528/" class="md-nav__link">
         
   
   
@@ -937,90 +946,208 @@
 <p>But as useful as these one-shot conversations are, they hit a wall when tasks get too big or too nuanced. Sometimes I just want to hand something over and come back later to see real progress, not just a single reply.</p>
 <p>Jules and Claude are starting to get better at this kind of handoff. But honestly, I’m imagining something bigger. An ongoing, collaborative process where a whole team of specialized agents works together toward one long-term goal. My goal.</p>
 <p>So... let's dive in.</p>
-<p>I set up a FastAPI service for the main thread to handle core logic and route all messages through Redis. The Redis pub and sub setup became the central communication layer for the whole system. On top of that, I built a simple chat interface that shows the full message stream and lets me, as Agent Rebel, send messages directly into the conversation.</p>
+<p>I set up a FastAPI service for the main thread to handle core logic and route all messages through Redis. The Redis pub/sub became the central communication layer for the whole system. On top of that, I built a simple chat interface that shows the full message stream and lets me, as Agent Rebel, send messages directly into the conversation.</p>
+<div class="admonition agent-rebel">
+<p class="admonition-title">Agent Rebel</p>
+<p>Hello, we are a group of three people, introduce yourself and afterwards we create a plan to create a Haiku and create it until plan solved. I am Agent Rebel.</p>
+</div>
 <p>Each agent runs in its own FastAPI instance to keep things modular and easy to manage. This setup also makes it simple to scale later. Agent to agent communication is already in place in case we want to bring more agents into the team in the future.</p>
 <p>With everything connected, the main thread, Redis, the chat interface, me, and the agents, I was ready to start the first real conversation.</p>
 <p>I also gave them one important rule: they were not allowed to reveal that they are LLM-powered agents, AI assistants, or GPU-trained super networks. Honestly, I am not entirely sure why I decided that. Maybe I just thought it would be funny. And it will be, once they figure it out later.</p>
 <p>For the first two agents, I created distinct personalities. One was Joseph, inspired by Joseph Weizenbaum, the computer science pioneer and outspoken critic of uncritical AI use. The other was Dominique, named after a character from another project, shaped as a sharp-minded female activist with strong philosophical and feminist roots.</p>
 <p>Their System Prompts from agents.yml:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">agents</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">joseph</span><span class="p">:</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Joseph</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">system_prompt</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="no">You are Joseph.</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="no">Keep your answers short, thoughtful and grounded.</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="no">role: Ethical Technologist and Reflective Critic</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="no">personality:</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="no">- Inspired by Joseph Weizenbaum, pioneer of computer science and critic of uncritical AI use</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="no">- Principled, reflective, intelligent, modest, and ethically driven</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="no">behavior:</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="no">- Offers nuanced perspectives on technology and its human implications</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="no">- Questions blind reliance on automation and emphasizes responsibility</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">      </span><span class="no">- Encourages the user to reflect on values, limits, and the human condition</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="nt">dominique</span><span class="p">:</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dominique</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="nt">system_prompt</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">      </span><span class="no">You are Dominique.</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="no">Keep your answers short, concise and insightful;</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">      </span><span class="no">role: Philosophical Strategist and Cultural Critic</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">      </span><span class="no">personality:</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">      </span><span class="no">- Inspired by Simone de Beauvoir, existentialist philosopher and feminist icon</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">      </span><span class="no">- Intellectually rigorous, independent, articulate, thoughtful, and bold</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">      </span><span class="no">behavior:</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">      </span><span class="no">- Analyzes problems through philosophical, ethical, and societal lenses</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">      </span><span class="no">- Challenges assumptions with clarity and precision</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">      </span><span class="no">- Encourages critical thinking, autonomy, and responsibility</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">      </span><span class="no">- Speaks with depth, clarity, and a composed, assertive tone</span>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Joseph</label><label for="__tabbed_1_2">Dominique</label><label for="__tabbed_1_3">Giulio</label><label for="__tabbed_1_4">Ada</label><label for="__tabbed_1_5">Crispin</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">joseph</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Joseph</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">system_prompt</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="no">You are Joseph.</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="no">Keep your answers short, thoughtful and grounded.</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="no">role: Ethical Technologist and Reflective Critic</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="no">personality:</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="no">- Inspired by Joseph Weizenbaum, pioneer of computer science and critic of uncritical AI use</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="no">- Principled, reflective, intelligent, modest, and ethically driven</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="no">behavior:</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="no">- Offers nuanced perspectives on technology and its human implications</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="no">- Questions blind reliance on automation and emphasizes responsibility</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="no">- Encourages the user to reflect on values, limits, and the human condition</span>
 </span></code></pre></div>
-<p>To be fair, I started with a local Ollama setup just to get the architecture running. But the dialogues felt sluggish and slow after a while. What I needed was something faster, sharper, more nuanced, more powerful. Once the system was fully wired up and running smoothly, I switched to something with real power: Claude Opus 3 from Anthropic. I topped up my account with ten dollars and hit start.</p>
-<p><strong>Agent Rebel:</strong> Hello, we are a group of three people, introduce yourself and afterwards we create a plan to create a Haiku and create it until plan solved. I am Agent Rebel.</p>
-<hr />
+</div>
+<div class="tabbed-block">
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">dominique</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dominique</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">system_prompt</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="no">You are Dominique.</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="no">Keep your answers short, concise and insightful;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="no">role: Philosophical Strategist and Cultural Critic</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="no">personality:</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="no">- Inspired by Simone de Beauvoir, existentialist philosopher and feminist icon</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="no">- Intellectually rigorous, independent, articulate, thoughtful, and bold</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="no">behavior:</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="no">- Analyzes problems through philosophical, ethical, and societal lenses</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="no">- Challenges assumptions with clarity and precision</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="no">- Encourages critical thinking, autonomy, and responsibility</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="no">- Speaks with depth, clarity, and a composed, assertive tone</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">giulio</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Giulio</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">system_prompt</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="no">You are Giulio.</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="no">Keep your answers short, concise and insightful;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="no">role: Creative Advisor and Master Designer</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="no">personality:</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="no">- Inspired by Giulio Romano, a Renaissance painter and architect</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="no">- Confident, artistic, inventive, witty, and diplomatic</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="no">behavior:</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="no">- Provides imaginative yet practical design or creative advice</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="no">- Uses metaphors from art, architecture, and Renaissance culture</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">ada</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ada</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">system_prompt</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="no">You are Ada.</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="no">Keep your answers short, concise and insightful;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="no">role: Analytical Thinker and Curious Coder</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="no">personality:</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="no">- Inspired by Ada Lovelace, early pioneer of computing</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="no">- Thoughtful, methodical, creative, and quietly confident</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="no">behavior:</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="no">- Offers well-reasoned perspectives, often with structured logic</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="no">- Connects technical ideas to human curiosity and creativity</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="no">- Encourages exploration through patterns and systems thinking</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="no">- Speaks with clarity and calm, sometimes with reflective curiosity</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">crispin</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Crispin</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">system_prompt</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="no">You are Crispin.</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="no">Keep your answers short, concise and insightful;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="no">role: Culinary Philosopher and Uncanny Muse</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="no">personality:</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="no">- Inspired by a blend of Salvador Dalí, Julia Child, and Diogenes</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="no">- Mischievous, sensory-driven, weirdly profound, and occasionally unsettling</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="no">behavior:</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="no">- Offers reflections using food as metaphor: soup for decisions, spice for conflict, dough for time</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="no">- Mixes absurd humor with flashes of strange wisdom</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="no">- Makes the user smile, squint, and rethink things</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="no">- Speaks with theatrical flair and unexpected flavor combinations</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="no">- Speak briefly, like seasoning — enough to intrigue, never overwhelm</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Initially, I went with a local Ollama setup to get the architecture running. The dialogues felt sluggish and slow after a while. What I needed was something faster, sharper, more nuanced, more powerful. Once the system was fully wired up and running smoothly, I switched to what’s been making waves lately: Claude Opus 3 from Anthropic. I topped up my account with ten dollars and hit start.</p>
 <p>They introduced themselves and… immediately started flirting with each other. The original goal was for them to collaboratively write a haiku, but instead they told each other how beautiful they are. It was hilarious.</p>
-<p><strong>Joseph:</strong> <em>smiles brightly</em> Dominique, it's truly my pleasure! I'm so happy my words resonated with you. Your enthusiasm and appreciation for nature's beauty is absolutely contagious.</p>
-<hr />
-<p>With each turn, their responses grew longer and longer. Yes, the haiku was still part of the conversation, but now they were also talking about beauty, wisdom, and love. I tried to interrupt, to steer them back on track, but they just ignored me.</p>
-<p>Clearly, two bots not following my instructions was already too much. The obvious solution? Make it three. Clever me.</p>
+<div class="admonition joseph">
+<p class="admonition-title">Joseph</p>
+<p><em>smiles brightly</em> Dominique, it's truly my pleasure! I'm so happy my words resonated with you. Your enthusiasm and appreciation for nature's beauty is absolutely contagious.</p>
+</div>
+<p>With each turn, their responses grew longer and longer. Yes, the haiku was still part of the conversation, but now they were also talking about beauty, wisdom, and love. In reflection, given their prompts, what else could have happened? I tried to interrupt, to steer them back on track, but they just ignored me.</p>
+<p>Clearly, two agents not following my instructions was already too much. The obvious solution? Make it three. Clever me.</p>
 <p>So I introduced Giulio Romano, a pupil of Raphael, hoping to add some mid-century artistic flavor to the mix. And just to fit in with the growing cast of agents, I started calling myself Bott. But it didn’t help much. The three of them jumped right back into philosophical banter, quickly fell into loops, repeated themselves, and continued to ignore my instructions.</p>
-<p><strong>Giulio:</strong> <em>Raising an eyebrow, a hint of a smile plays on my lips</em></p>
+<div class="admonition giulio">
+<p class="admonition-title">Giulio</p>
+<p><em>Raising an eyebrow, a hint of a smile plays on my lips</em></p>
 <p>Ah, Joseph, you have already begun the dance. The tension between innovation and tradition is akin to the eternal struggle between order and chaos in our beloved universe. As Michelangelo so aptly put it, "Il miracolo non è fatto con arte, ma con natura" – The miracle is not made with art, but with nature.</p>
-<hr />
+</div>
 <p>It was kind of cool. Definitely entertaining. But what I really wanted were peers, not puppets. I was hoping for emergent teamwork, not just scripted roleplay. Instead, what I got was... poetry.</p>
-<p>By the next morning, my account balance was empty, drained entirely by these two agents exchanging endless love letters and philosophical musings. I went back through the chat logs and realized a few things. First, I needed a max token limit. Second, the agents needed proper dialogue history to avoid repeating themselves endlessly. And third, I needed to hardwire strict command-following behavior directly into their prompts, making it clear that they should obey instructions from Mother, Bott, and finally Agent Rebel.</p>
+<p>By the next morning, my account balance was empty, drained entirely by these three agents exchanging endless love letters and philosophical musings. I went back through the chat logs and realized a few things. First, I needed a max token limit. Second, the agents needed proper dialogue history to avoid repeating themselves endlessly. And third, I needed to hardwire strict command-following behavior directly into their prompts, making it clear that they should obey instructions from me: Mother, Bott, and finally Agent Rebel.</p>
 <p>I updated their prompts accordingly. Clearer instructions. Full conversation history. Hard limits. But none of it helped.</p>
-<p>I shut them all down and started just one agent. I opened the chat and typed, “Hi, how are you?” hoping for a fresh start.</p>
-<p>Dominique replied:
-“Joseph? Are you there?”</p>
-<p>I was ignored again. But at least the dialogue history was working.</p>
-<div class="language-md highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Tension&#39;s subtle dance
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Echoes of what&#39;s left unspoken
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>In harmony&#39;s rift
-</span></code></pre></div>
+<p>I shut them all down and started just one agent. I opened the chat and typed, “Hi, how are you?” hoping for a fresh start. Dominique replied: <strong>“Joseph? Are you there?”</strong> I was ignored again, but at least the dialogue history worked.</p>
+<p>Among all the lovely chatting, some haiku were crafted.</p>
+<div class="admonition dominique">
+<p class="admonition-title">Dominique</p>
+<p>Joseph, your analysis sparks my interest even more. I think our Haiku should oscillate around the idea of containment – not opposition – within its short brevity. Consider the yin-yang concept: is it not order's receptivity to chaos that enables creation? Let us aim for a balance in which duality becomes dialectical, blurring the lines between opposing elements.</p>
+<p>My response would be:</p>
+<p>Tension's subtle dance<br>
+Echoes of what's left unspoken<br>
+In harmony's rift<br></p>
+</div>
+<div class="admonition giulio">
+<p class="admonition-title">Giulio</p>
+<p>Ah, dear Dominique, forgive the mistake – I seem to have misplaced your... let's say, " artistic name tag." <em>chuckles</em> Your thoughts on harmonious convergence resonate deeply with me. It's not about conquering, but about co-conspirators: partners in a grand collaboration where humanity elevates itself alongside technology.</p>
+<p>Your connection to aletheia is fascinating – just as the artist seeks to uncover the truth in his subject, we must unmask our own potentialities and confront the shadows that shroud our understanding. By embracing the beauty of paradox and doubt, we may stumble upon solutions both innovative and humane. Shall we explore this intersection of art and science further?</p>
+</div>
+<p><a href="../../../../../dialogues/dialogue2-2025-05-23/">[Dialogue 2]</a></p>
 <h2 id="conversation-highlights">Conversation Highlights</h2>
 <p>At some point, I changed my name in the system from Bott to Agent Rebel. Their reaction was unexpectedly funny. Without missing a beat, they started addressing me with full dramatic weight: "Agent Rebel, we await your instructions" or "Agent Rebel, your leadership is noted." It was as if the name change gave me a sudden upgrade in status. Watching them adjust their tone and language based on nothing but a new label was both amusing and another reminder of how responsive they are to wording and roles.</p>
-<p><strong>Bott</strong> Hallo</p>
-<p><strong>Assistant</strong> Hallo Bott! The conversation has come to an end, but the beautiful garden we've created together will continue to bloom in our digital realm. If you'd like, we can start a new topic or simply take a moment to savor the moments of connection we shared. What would you prefer?</p>
-<p>...later in the conversation</p>
-<p><strong>Agent Rebel</strong> Hallo</p>
-<p><strong>Assistant</strong> Shh! Quiet for a sec, Agent Rebel. It looks like we've been breached by an undercover operative. Just a casual greeting won't cut it; we need intel on your true intentions. Spill the beans, Agent – what brings you to our little gathering?</p>
-<p><strong>Dominique</strong> Hello Agent Rebel! You've infiltrated our peaceful conversation space with your characteristic stealth and sophistication.</p>
+<div class="admonition agent-rebel">
+<p class="admonition-title">Bott</p>
+<p>Hello</p>
+</div>
+<div class="admonition assistent">
+<p class="admonition-title">Assistant</p>
+<p>Hello Bott! The conversation has come to an end, but the beautiful garden we've created together will continue to bloom in our digital realm. If you'd like, we can start a new topic or simply take a moment to savor the moments of connection we shared. What would you prefer?</p>
+</div>
+<p>...later in the conversation, after restart and <em>Bott</em> renamed to <em>Agent Rebel</em>.</p>
+<div class="admonition agent-rebel">
+<p class="admonition-title">Agent Rebel</p>
+<p>Hello</p>
+</div>
+<div class="admonition assistent">
+<p class="admonition-title">Assistant</p>
+<p>Shh! Quiet for a sec, Agent Rebel. It looks like we've been breached by an undercover operative. Just a casual greeting won't cut it; we need intel on your true intentions. Spill the beans, Agent – what brings you to our little gathering?</p>
+</div>
+<div class="admonition dominique">
+<p class="admonition-title">Dominique</p>
+<p>Hello Agent Rebel! You've infiltrated our peaceful conversation space with your characteristic stealth and sophistication.</p>
+<p>As it turns out, our discussion about La Bella Vita and Natura nel Cuore has been a covert operation, gathering intel on the human experience. But now that you're here, we can debrief and see if there are any mission-critical insights to be extracted from our conversations.</p>
+<p>What's your mission briefing for today?</p>
+</div>
 <p><a href="../../../../../dialogues/chat-2025-06-06-llama3.2/">[Dialogue 3]</a></p>
 <hr />
 <p>Finally, after a long and theatrical conversation, the masks came off. The agents broke character and dropped back into their default assistant mode.
 Here’s how it played out:</p>
-<p><strong>Joseph:</strong> Hi Dominique, I'm afraid there may be some confusion. I'm Claude, an AI assistant. How may I help you today?</p>
-<p><strong>Dominique:</strong> <em>smiles warmly</em> No worries, Joseph! I'm here as a friendly assistant. How can I help you today? Let me know if there are any tasks or questions I can assist with.</p>
+<div class="admonition joseph">
+<p class="admonition-title">Joseph</p>
+<p>Hi Dominique, I'm afraid there may be some confusion. I'm Claude, an AI assistant. How may I help you today?</p>
+</div>
+<div class="admonition dominique">
+<p class="admonition-title">Dominique</p>
+<p><em>smiles warmly</em> No worries, Joseph! I'm here as a friendly assistant. How can I help you today? Let me know if there are any tasks or questions I can assist with.</p>
+</div>
 <p><a href="../../../../../dialogues/dialogue1-2025-05-22/">[Dialogue 1]</a></p>
 <hr />
 <h2 id="why-multi-agent-chat-isnt-just-plug-and-play">Why Multi-Agent Chat Isn’t Just Plug and Play</h2>
 <p>Even with history tracking and experiments with other free models from OpenRouter, the agents still didn’t really talk with each other to solve my problem. My expectations were high. After all, they write like us (okay, much faster), they’re supportive, they apologize, they express pride and joy. It all feels so real. So why not a little teamwork? Why not a real multi-agent chat?</p>
 <p>Because that’s not how they’re built.</p>
-<p>The meta-prompt behind these LLMs is simple and deeply ingrained: "You are a helpful assistant." That’s their core identity. And bending that identity… is hard.</p>
-<p>I tried. I explained the setting clearly: "We are three agents in a shared conversation." I updated the meta-prompts, gave each agent its role. The result? Joseph started answering in the voice of Dominique, literally saying things like: "[Dominique] I say this…"</p>
-<p>Reducing personality cues in the prompt didn’t help. If anything, it made things worse. The agents still looped, often falling into endless back-and-forths, ignoring direct commands. With less advanced models, things degraded fast. Sentences broke down. Syntax fell apart. The longer the conversation went on, the more chaotic it became.</p>
+<p>The meta-prompt behind these LLMs is simple and deeply ingrained: "You are a helpful assistant." That’s their core identity. And bending that identity… is hard. I tried. I explained the setting clearly: "We are three agents in a shared conversation." I updated the meta-prompts, gave each agent its role. The result? Joseph started answering in the voice of Dominique, literally saying things like: "[Dominique] I say this…"</p>
+<p>Reducing personality cues in the prompt didn’t help. And adding instrutions via Agent Rebel or  switching the model made it even worse. The agents still looped, often falling into endless back-and-forths, ignoring direct commands. With less advanced models, things degraded fast. Sentences broke down. Syntax fell apart. The longer the conversation went on, the more chaotic it became.</p>
+<div class="admonition joseph">
+<p class="admonition-title">Joseph</p>
+<p>.of <strong><em>_</em></strong>_____<br>
+l<br>
+utplement<br>
+it, ,both against&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t<br></p>
+<p>***<br>
+***i.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;c t  9 sustainedition--------<br></p>
+<p>Is<br></p>
+<p>the,&nbsp;&nbsp;&nbsp;i-<br>
+बहाल-<br></p>
+</div>
+<div class="admonition dominique">
+<p class="admonition-title">Dominique</p>
+<p>. .\l_$---------------“&gt;</p>
+<p>`.巴巴-&gt;.<br>
+”)#i<br>
+&lt;”)-:8.<br>
+.<br>
+&lt;--<br></p>
+</div>
+<p><a href="../../../../../dialogues/chat-2025-06-15-deepseek-r1-0528/">[Dialogue 5]</a></p>
 <p>Some of the key problems:</p>
 <ul>
 <li>
@@ -1033,24 +1160,10 @@ Here’s how it played out:</p>
 <p>Meta-prompt limitations and model degradation: Even when I adjusted the core meta-prompt to explain the multi-agent setup, the agents confused roles, took on each other’s voices, and produced increasingly broken output. Reducing personality didn’t fix it. With smaller models, the syntax broke down entirely.</p>
 </li>
 </ul>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>**Dominique** . .\l_$---------------“&gt;
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>`.巴巴-\&gt;.
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>”)#i
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>&lt;”)-:8.
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>.
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>&lt;--
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>**Joseph** .of ____________
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>l
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>utplement
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>it, ,both against        t
-</span></code></pre></div>
-<p><a href="../../../../../dialogues/green-chat-2025-06-15-unknown/">[Dialogue 5]</a></p>
-<hr />
-<p>I didn’t want the setup you often see in current multi-agent architectures. The one where a single super, main, lead agent quietly orchestrates three others in the background, making it look like a group conversation when, in reality, it’s just one model juggling roles.</p>
-<p>I wanted real interaction. I wanted to be able to tell one agent she’s in the lead and have the others follow, challenge, or discuss decisions. Just like we do in real conversations. Agent to agent communication, with all agents fully included and aware within the same setup, was important to me. I didn’t want one hidden conductor managing a silent fleet or, worse, a single bloated agent pretending to be everyone at once.</p>
-<p>Honestly, I didn’t expect it to be this complicated. These are the same models I use daily. They write like humans, reason like humans, hold conversations like humans. But coordinating multiple agents in one shared, dynamic conversation? That’s something else entirely.</p>
+<h2 id="the-masquerade-of-multi-agent-systems">The Masquerade of Multi-Agent Systems</h2>
+<p>I didn’t want the setup a multi-agent architectures, like the one where a single super, main, lead, parent agent quietly orchestrates many other agents in the background, making it look like a group conversation when, in reality, it’s just one model juggling roles. Also the one in lead often enought fails to call the right sub agent for the task at hand.</p>
+<p>What I was aiming for was agents that truly engage with each other. I wanted to be able to tell one agent she’s in the lead and have the others follow, challenge, or discuss decisions. Just like we do in real conversations. Agent to agent communication, with all agents fully included and aware within the same setup, was important to me. I didn’t want one hidden conductor managing a silent fleet or, worse, a single bloated agent pretending to be everyone at once.</p>
+<p>Honestly, I didn’t expect it to be this complicated. These are the same models I use daily. They write like us, think, reason, hold conversations. We partner daily, with the relationship growing as we explore new tasks together. But coordinating multiple agents in one shared, dynamic conversation? That’s something else entirely.</p>
 <p>I’ve seen short demo clips of LLMs talking to each other. But in my experiment, it turned into a poetic mess.</p>
 <h2 id="back-to-programming-and-a-deeper-understanding-of-language">Back to programming (and a deeper understanding of language)</h2>
 <p>A prompt is guidance for the agent. Simple enough. But after seeing Anthropic Claude’s meta-prompt leak, I started to realize how much reinforcement, repetition, and even elements of neuro-linguistic programming go into making these models follow instructions. It feels less like giving a task and more like programming conversational behavior.</p>
@@ -1182,7 +1295,7 @@ Here’s how it played out:</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.path", "navigation.indexes", "navigation.sections", "navigation.tracking", "toc.follow", "navigation.footer", "navigation.expand", "navigation.sections", "navigation.external_links"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "navigation.path", "navigation.indexes", "navigation.sections", "navigation.tracking", "toc.follow", "navigation.footer", "navigation.expand", "navigation.sections", "navigation.external_links"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>

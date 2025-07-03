@@ -852,6 +852,28 @@
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/astral-sh/ruff" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ruff
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                      
+                        
+                        
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="https://github.com/astral-sh/uv" class="md-nav__link">
         
   
@@ -911,7 +933,7 @@
 
 
 <h1 id="rust-appears-everywhere">Rust appears everywhere</h1>
-<p>Yesterday I came along Just in a project and figured out a nice task runner like Makefile. Reading the README I noticed it is written in Rust. That happens all the time for a few months: Rust appears everywhere in my developer eco system. Project manager uv is ultra fast, pydantic v2 core rewritten in rust for performance, my new editor Zed is super sleek and fast, and that is just what I am directly aware of, what about Rust? I need to hello world into it.</p>
+<p>Yesterday I came along Just in a project and figured out a nice task runner like Makefile. Reading the README I noticed it is written in Rust. That happens all the time for a few months: Rust appears everywhere in my developer eco system. Project manager uv is ultra fast, pydantic v2 core rewritten in rust for performance, ruff  as linter and code formatter, my new editor Zed is super sleek and fast, and that is just what I am directly aware of, what about Rust? I need to hello world into it.</p>
 <!-- more -->
 
 <div class="language-zsh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>➜<span class="w">  </span>rust0<span class="w"> </span>git:<span class="o">(</span>master<span class="o">)</span><span class="w"> </span>✗<span class="w"> </span>cargo<span class="w"> </span>run
@@ -934,13 +956,13 @@
 <h2 id="solid-integration">Solid integration</h2>
 <p>But the real magic happens at the interface. Using PyO3, Rust functions and modules can be exposed to Python as if they were native modules. With just a few lines of Rust code, you can define a function, decorate it with #[pyfunction], and expose it in a Python-friendly module using #[pymodule]. The result is a shared library that behaves like any other Python module but runs much faster and often several times faster than equivalent Python code, and in some cases, even outperforming C extensions.</p>
 <p>So ultimately, it's all about performance and integration. The question isn't just "how fast is it," but also "how well does it fit into Python projects?" And on that front, Rust delivers. You can embed Python into Rust or call Rust from Python. PyO3 handles the translation layer between Python objects and Rust types, and the compiled result often resembles a classic C-extension from Python’s perspective is exactly what many existing tools expect.</p>
-<p>The adoption rate of Rust for Python interoperability has been growing rapidly. According to the maintainers of PyO3 and maturin, the number of Rust-powered Python packages is doubling year over year [1]. That momentum is driven not just by the promise of speed, but by the fact that the integration actually works—and works well—even for small projects.</p>
+<p>The adoption rate of Rust for Python interoperability has been growing rapidly. According to the maintainers of PyO3 and maturin, the number of Rust-powered Python packages is doubling year over year<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. That momentum is driven not just by the promise of speed, but by the fact that the integration actually works, and works well even for small projects.</p>
 <h3 id="calling-python-from-rust">Calling Python from Rust</h3>
-<p>Just extending the example project to execute python from rust code. See <a href="https://github.com/rebeling/rust0">running python in rust</a> examples/python_from_rust.rs.</p>
+<p>Just extending the example project to execute python from rust code. See <a href="https://github.com/rebeling/rust0" target="_blank">running python in rust</a> examples/python_from_rust.rs.</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Hello<span class="w"> </span>matthias,<span class="w"> </span>I<span class="err">&#39;</span>m<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>.11.0<span class="w"> </span><span class="o">(</span>main,<span class="w"> </span>Jun<span class="w">  </span><span class="m">7</span><span class="w"> </span><span class="m">2023</span>,<span class="w"> </span><span class="m">14</span>:42:41<span class="o">)</span><span class="w"> </span><span class="o">[</span>Clang<span class="w"> </span><span class="m">14</span>.0.3<span class="w"> </span><span class="o">(</span>clang-1403.0.22.14.1<span class="o">)]</span>
 </span></code></pre></div>
 <h3 id="calling-rust-from-python">Calling Rust from Python</h3>
-<p>And what about vice versa in python executing Rust, a bit more setup and dive into but with maturin project setup. See <a href="https://github.com/rebeling/rust1">running rust in python</a> the basic example sum two values input was 1 and 2. The example is autogenerated with maturin.</p>
+<p>And what about vice versa in python executing Rust, a bit more setup and dive into but with maturin project setup. See <a href="https://github.com/rebeling/rust1" target="_blank">running rust in python</a> the basic example sum two values input was 1 and 2. The example is autogenerated with maturin.</p>
 <div class="language-rs highlight"><span class="filename">src/lib.rs</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">use</span><span class="w"> </span><span class="n">pyo3</span><span class="p">::</span><span class="n">prelude</span><span class="p">::</span><span class="o">*</span><span class="p">;</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">/// Formats the sum of two numbers as string.</span>
@@ -964,10 +986,17 @@
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="m">3</span>
 </span></code></pre></div>
 <h2 id="rust-up">Rust up</h2>
-<p>Rust keeps cropping up in the Python ecosystem because it delivers C-level speed—and often more. Tools like uv, Pydantic v2 and Zed have already proved the point in day-to-day work, so moving one performance-critical loop to Rust felt like the next logical step.</p>
+<p>Rust keeps cropping up in the Python ecosystem because it delivers C-level speed and often more. Tools like uv, Pydantic v2 and Zed have already proved the point in day-to-day work, so moving one performance-critical loop to Rust felt like the next logical step.</p>
 <p>That “compiles, installs, and runs first time” experience was pretty good. Nothing derailed momentum, so the focus stayed on measuring the improvement rather than fighting the toolchain.</p>
 <p>The takeaway is simple. If you have a hot path that pure Python can’t handle, porting just that slice to Rust seems to be a low-risk, high-reward move. With PyO3 and maturin the language boundary is thin, and once the basic example works, sky is the limit. Rust in Python, is already a solid option for the parts where every millisecond counts.</p>
-<p>[1] <a href="https://www.youtube.com/watch?v=UmL_CA-v3O8">PyO3: From Python to Rust and Back Again (Kris Jankins, David Hewitt)</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://www.youtube.com/watch?v=UmL_CA-v3O8" target="_blank">PyO3: From Python to Rust and Back Again (Kris Jankins, David Hewitt)</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
@@ -1098,7 +1127,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.path", "navigation.indexes", "navigation.sections", "navigation.tracking", "toc.follow", "navigation.footer", "navigation.expand", "navigation.sections", "navigation.external_links"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "navigation.path", "navigation.indexes", "navigation.sections", "navigation.tracking", "toc.follow", "navigation.footer", "navigation.expand", "navigation.sections", "navigation.external_links"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
