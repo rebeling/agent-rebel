@@ -2,48 +2,149 @@
 
 /* Custom colors */
 :root {
-  --md-primary-fg-color: #2c3e50;
-  --md-primary-fg-color--light: #34495e;
-  --md-primary-fg-color--dark: #2c3e50;
-  --md-accent-fg-color: #3498db;
+    --md-primary-fg-color: #2c3e50;
+    --md-primary-fg-color--light: #34495e;
+    --md-primary-fg-color--dark: #2c3e50;
+    --md-accent-fg-color: #3498db;
 }
 
 /* Custom typography */
 .md-content {
-  font-size: 1.1rem;
-  line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 /* Custom header styling */
 .md-header {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Custom navigation styling */
 .md-nav__link {
-  font-weight: 500;
+    font-weight: 500;
 }
 
 /* Custom footer styling */
 .md-footer {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 /* Custom code block styling */
 .md-typeset code {
-  font-size: 0.9em;
-  padding: 0.2em 0.4em;
-  border-radius: 3px;
+    font-size: 0.9em;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
 }
 
 /* Custom table styling */
 .md-typeset table {
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Custom admonition styling */
 .md-typeset .admonition {
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-} 
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.md-typeset .admonition.assistent,
+.md-typeset .admonition.agent-rebel,
+.md-typeset .admonition.joseph,
+.md-typeset .admonition.dominique,
+.md-typeset .admonition.giulio {
+    width: 90%;
+    border-radius: 12px;
+}
+
+/* === Agent Rebel === */
+.md-typeset .admonition.agent-rebel,
+.md-typeset details.agent-rebel {
+    border-color: rgb(43, 155, 70); /* green */
+    width: 90%;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.md-typeset .agent-rebel > .admonition-title,
+.md-typeset .agent-rebel > summary {
+    background-color: rgba(43, 155, 70, 0.1);
+    text-align: right;
+}
+
+.md-typeset .agent-rebel > .admonition-title::before,
+.md-typeset .agent-rebel > summary::before {
+    content: unset;
+}
+
+/* === Joseph === */
+.md-typeset .admonition.joseph,
+.md-typeset details.joseph {
+    border-color: rgb(70, 130, 180); /* steel blue */
+    width: 90%;
+}
+
+.md-typeset .joseph > .admonition-title,
+.md-typeset .joseph > summary {
+    background-color: rgba(70, 130, 180, 0.1);
+    padding-left: 0.6rem;
+}
+
+.md-typeset .joseph > .admonition-title::before,
+.md-typeset .joseph > summary::before {
+    content: unset;
+}
+
+/* === Dominique === */
+.md-typeset .admonition.dominique,
+.md-typeset details.dominique {
+    border-color: rgb(218, 112, 214); /* orchid / violet */
+    width: 90%;
+}
+
+.md-typeset .dominique > .admonition-title,
+.md-typeset .dominique > summary {
+    background-color: rgba(218, 112, 214, 0.1);
+    padding-left: 0.6rem;
+}
+
+.md-typeset .dominique > .admonition-title::before,
+.md-typeset .dominique > summary::before {
+    content: unset;
+}
+
+/* === Guilio === */
+.md-typeset .admonition.giulio,
+.md-typeset details.giulio {
+    border-color: rgb(255, 165, 0); /* orange */
+    width: 90%;
+}
+
+.md-typeset .giulio > .admonition-title,
+.md-typeset .giulio > summary {
+    background-color: rgba(255, 165, 0, 0.1);
+    padding-left: 0.6rem;
+}
+
+.md-typeset .giulio > .admonition-title::before,
+.md-typeset .giulio > summary::before {
+    content: unset;
+}
+
+/* === assistent === */
+.md-typeset .admonition.assistent,
+.md-typeset details.assistent {
+    border-color: rgb(0, 128, 128); /* steel blue */
+    width: 90%;
+}
+
+.md-typeset .assistent > .admonition-title,
+.md-typeset .assistent > summary {
+    background-color: rgba(0, 128, 128, 0.1);
+    padding-left: 0.6rem;
+}
+
+.md-typeset .assistent > .admonition-title::before,
+.md-typeset .assistent > summary::before {
+    content: unset;
+}

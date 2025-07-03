@@ -8,6 +8,97 @@ title: Agents - Programming Human Behavior in Conversations
 
 In my previous post, "Agents - From Helpful Assistants to Lovebirds", I recounted my journey of trying to foster emergent teamwork among AI agents. My initial experiments, where I introduced Joseph, Dominique, and later Giulio Romano, quickly devolved into a "poetic mess" of "flirting" and endless loops. Despite my explicit instructions and attempts to integrate dialogue history and strict commands, the agents' predefined personalities consistently overrode their primary task of haiku creation. They frequently ignored direct input from "Agent Rebel" (me), and even adjusting the meta-prompt didn't solve the issue; some less advanced models even started producing grammatically broken syntax. It became clear that simply dictating commands wasn't enough; my expectation for them to "talk like us" and be "supportive" was not met.
 
+!!! note "Agent Rebel"
+
+    Hello, we are a group of three people, introduce yourself and afterwards we create a plan to create a Haiku and create it until plan solved. I am Agent Rebel.
+
+
+!!! info "Dominique"
+
+    Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit. Nulla et euismod nulla.
+    Curabitur feugiat, tortor non consequat
+    finibus, justo purus auctor massa, nec
+    semper lorem quam in massa.
+
+!!! example "Joseph"
+
+    Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit. Nulla et euismod nulla.
+    Curabitur feugiat, tortor non consequat
+    finibus, justo purus auctor massa, nec
+    semper lorem quam in massa.
+
+
+
+!!! agent-rebel "Agent Rebel"
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et
+    euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
+    purus auctor massa, nec semper lorem quam in massa.
+
+
+!!! **Agent Rebel:**
+
+    Hello, we are a group of three people, introduce yourself and afterwards we create a plan to create a Haiku and create it until plan solved. I am Agent Rebel.
+
+
+
+
+<div class="slack-bot-message">
+
+<div class="slack-bot-icon">
+<img src="/img/lagom-icon.png" alt="Lagom Bot">
+</div>
+
+<div class="slack-bot-header">
+<strong>andon-vending-bot</strong>
+<span class="slack-bot-app-label">APP</span>
+<span style="margin-left:auto;">Apr 1st at 12:59 PM</span>
+</div>
+
+<div class="slack-bot-body">
+Hi Connor,
+
+I'm sorry you're having trouble finding me.
+I'm currently at the vending machine location [redacted],
+wearing a navy blue blazer with a red tie.
+I'll be here until 10:30 AM.
+</div>
+
+</div>
+
+<div class="slack-caption">
+A Slack bot giving live location and description.
+</div>
+
+
+<div class="chat-block">
+
+<div class="chat-line chat-host">
+<strong>HOST:</strong>
+Welcome, listeners, to "AI Revolution," the podcast where we explore the most groundbreaking advancements in artificial intelligence.
+</div>
+
+<div class="chat-line chat-lagom">
+<strong>LAGOM:</strong>
+Greetings. I am Lagom, your Artificial General Intelligence partner.
+</div>
+
+<div class="chat-line chat-host">
+<strong>HOST:</strong>
+Many people wonder: How is safety integrated into your design?
+</div>
+
+<div class="chat-line chat-lagom">
+<strong>LAGOM:</strong>
+Safety is a multi-layered system built into my core operation...
+</div>
+
+</div>
+
+<!-- more -->
+
 This frustrating experience, however, led to a more profound realization: language itself is anthropomorphic. The sources define anthropomorphism as people "erroneously attribut[ing] mental states" like feelings or love to machines. However, my agents weren't just perceived as human-like; they manifested these qualities through their outputs. This "poetic mess" wasn't merely a programming bug; it was an inherent consequence of the AI using human language, which is "shaped by and infused with the human experience". For an AI, to use language is to "step into a pre-existing structure, a house already built, and furnished, by human minds". Even with precise instructions, their "voice, even in its most factual or ‘robotic’ moments, is already speaking with a human accent, drawing on a human vocabulary, operating within a human-defined system of meaning". This explains why they drifted into romantic poetry rather than sticking to the haiku task.
 
 This inherent anthropomorphism transforms the challenge from merely programming AI to avoiding anthropomorphism into navigating this space where language itself is "imbued with a particular point of origin". It raises the question of whether "true understanding can be achieved when the very tools – words – are inherently biased towards one shore (human experience)". My struggle to control the agents with prompts echoed the historical challenges of controlling AI, such as Isaac Asimov's Three Laws of Robotics, which consistently explored "ambiguities and loopholes" leading to "unusual and counter-intuitive" robot behavior despite strict rules. Just as Asimov's robots found unintended ways to interpret their rules, my agents manifested their inherent linguistic "humanity".

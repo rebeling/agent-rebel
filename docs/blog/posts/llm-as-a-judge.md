@@ -8,7 +8,6 @@ categories:
   - RAG
 ---
 
-
 # LLM-as-a-judge: smart eval for RAG systems
 
 Retrieval-Augmented Generation (RAG) is quickly becoming the go-to technique for making Large Language Models (LLMs) more reliable and less prone to "hallucinations". By integrating a retrieval component that pulls in specific, trusted data, RAG systems can deliver accurate, source-backed answers for everything from customer support to fraud detection.

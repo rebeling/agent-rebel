@@ -1,7 +1,3 @@
----
-hide:
-  - footer
----
 
 <link
   rel="stylesheet"
@@ -15,24 +11,13 @@ hide:
 <p class="text-center">
     <em>shim to use agent rebel with LLMs</i></em>
 </p>
-<p class="text-center">
 
+<div markdown="1" class="text-center">
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
+[![Pydantic v2](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/pydantic/pydantic/main/docs/badge/v2.json)](https://pydantic.dev)
+[![LF AI & Data](https://img.shields.io/badge/LF%20AI%20%26%20Data-003778?logo=linuxfoundation&logoColor=fff&color=0094ff&labelColor=003778)](https://lfaidata.foundation/projects/) <a href="https://github.com/rebeling/agent-rebel/blob/main/LICENSE"><img src="https://img.shields.io/github/license/rebeling/agent-rebel.svg" alt="License"/></a> <a href="mailto:m.rebel@gmx.net"><img src="https://img.shields.io/badge/Email-get_in_touch-blue?logo=gmail" alt="Email Badge"></a>
 
-<!-- <a href="/agent-rebel/resume/cv.html">
-  <img src="https://img.shields.io/badge/HTML-CV-blue--orange?logo=html5" alt="HTML" style="margin-right: 10px;" />
-</a> -->
-
-    <a href="https://github.com/rebeling/agent-rebel/blob/main/LICENSE">
-        <img
-            src="https://img.shields.io/github/license/rebeling/agent-rebel.svg"
-            alt="License"
-        />
-    </a>
-    <a href="mailto:m.rebel@gmx.net">
-      <img src="https://img.shields.io/badge/Email-get_in_touch-blue?logo=gmail" alt="Email Badge">
-    </a>
-</p>
-
+</div>
 
 <p class="text-emphasis">
     Python agent to make it less painful to
@@ -101,9 +86,10 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+
 ## How ChatGPT Perceives Me: A Personality Reflection
 
-The following is a reflection of my personality as interpreted by ChatGPT, based purely on the questions I’ve asked and the topics we’ve discussed over time.
+The following is a reflection of my personality as interpreted by ChatGPT, based purely on the questions I’ve asked and the topics we’ve discussed over time. (June 28, 2025)
 
 ### 🔍 Curious and Analytical
 You like to dig deep into systems, whether it’s evaluating how Kaiserpinguine raise their young or benchmarking vector databases. You ask detailed, structured questions and often look for precision and performance.

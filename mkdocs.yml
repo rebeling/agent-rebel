@@ -58,6 +58,7 @@ theme:
     - content.code.annotate
     - content.code.copy
     - content.code.select
+    - content.footnote.tooltips
     - navigation.path
     - navigation.indexes
     - navigation.sections
@@ -88,14 +89,18 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
   - attr_list
   - md_in_html
+  - footnotes
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
 
 plugins:
   - search
